@@ -12,9 +12,9 @@
 
 ## Модуль 12. Реляционные базы данных
 
-12.2. [Работа с данными (DDL/DML)](https://github.com/netology-code/sdb-homeworks/blob/main/12-02.md).
+12.2. [Работа с данными (DDL/DML)](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/12-02.md).
 
-12.3. [SQL. Часть 1](https://github.com/netology-code/sdb-homeworks/blob/main/12-03.md).
+12.3. [SQL. Часть 1](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/12-03.md).
 
 ## Модуль 13. Информационная безопасность
 
