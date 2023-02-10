@@ -12,6 +12,8 @@
 
 12.4. [SQL. Часть 2](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/12-04.md).
 
+12.5. [Индексы](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/12-05.md).
+
 ## Модуль 13. Информационная безопасность
 
 
