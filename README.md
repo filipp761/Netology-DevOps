@@ -14,6 +14,6 @@
 
 12.5. [Индексы](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/12-05.md).
 
-12.8. [Резервное копирование баз данных](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/12-05.md).
+12.8. [Резервное копирование баз данных](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/12-08.md).
 
 ## Модуль 13. Информационная безопасность
