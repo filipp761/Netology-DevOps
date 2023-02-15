@@ -4,7 +4,7 @@
 
 ## Модуль 11. Системы хранения и передачи данных
 
-11.2. [Работа с данными (DDL/DML)](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/11-02.md).
+11.2. [Кеширование Redis/memcached](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/11-02.md).
 
 ## Модуль 12. Реляционные базы данных
 
