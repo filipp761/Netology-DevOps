@@ -6,6 +6,8 @@
 
 11.2. [Кеширование Redis/memcached](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/11-02.md).
 
+11.3. [ELK](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/11-03.md).
+
 ## Модуль 12. Реляционные базы данных
 
 12.2. [Работа с данными (DDL/DML)](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/12-02.md).
