@@ -8,6 +8,8 @@
 
 11.3. [ELK](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/11-03.md).
 
+11.4. [Очереди RabbitMQ](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/11-04.md).
+
 ## Модуль 12. Реляционные базы данных
 
 12.2. [Работа с данными (DDL/DML)](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/12-02.md).
@@ -21,3 +23,4 @@
 12.8. [Резервное копирование баз данных](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/12-08.md).
 
 ## Модуль 13. Информационная безопасность
+
