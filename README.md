@@ -27,3 +27,5 @@
 ## Модуль 13. Информационная безопасность
 
 13.1 [Уязвимости и атаки на информационные системы](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/13-01.md).
+
+13.2 [«Защита хоста»](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/13-02.md).
