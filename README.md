@@ -34,8 +34,8 @@
 
 1. [Системы контроля версий](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/git-01.md).
 
-2. [Системы контроля версий](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/git-02.md).
+2. [Основы Git](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/git-02.md).
 
-3. [Системы контроля версий](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/git-03.md).
+3. [Ветвления в Git](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/git-03.md).
 
-4. [Системы контроля версий](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/git-04.md).
+4. [Инструменты в Git](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/git-04.md).
