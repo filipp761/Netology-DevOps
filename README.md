@@ -28,4 +28,14 @@
 
 13.1 [Уязвимости и атаки на информационные системы](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/13-01.md).
 
-13.2 [«Защита хоста»](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/13-02.md).
+13.2 [Защита хоста](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/13-02.md).
+
+## Системы управления версиями
+
+1. [Системы контроля версий](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/git-01.md).
+
+2. [Системы контроля версий](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/git-02.md).
+
+3. [Системы контроля версий](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/git-03.md).
+
+4. [Системы контроля версий](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/git-04.md).
