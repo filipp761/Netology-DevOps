@@ -30,7 +30,7 @@
 
 13.2 [Защита хоста](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/13-02.md).
 
-## Системы управления версиями
+## Системы управления версиями Git
 
 1. [Системы контроля версий](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/git-01.md).
 
