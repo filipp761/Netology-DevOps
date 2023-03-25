@@ -44,12 +44,12 @@
 ```script bash
 git clone https://github.com/filipp761/devops-netology.git
 ```
-6. Перейдите в каталог с клоном репозитория (`cd devops-netology`).
+5. Перейдите в каталог с клоном репозитория (`cd devops-netology`).
 
 ```script bash
 cd devops-netology/
 ```
-7. Произведите первоначальную настройку Git, указав своё настоящее имя, чтобы нам было проще общаться, и email (`git config --global user.name` и `git config --global user.email johndoe@example.com`). 
+6. Произведите первоначальную настройку Git, указав своё настоящее имя, чтобы нам было проще общаться, и email (`git config --global user.name` и `git config --global user.email johndoe@example.com`). 
 
 ```script bash
 git config --global user.name Philipp Kopylov
@@ -57,10 +57,10 @@ git config --global user.name Philipp Kopylov
 ```script bash
 git config --global user.email filkopylov@gmail.com
 ```
-9. Выполните команду `git status` и запомните результат.
-10. Отредактируйте файл `README.md` любым удобным способом, тем самым переведя файл в состояние `Modified`.
-11. Ещё раз выполните `git status` и продолжайте проверять вывод этой команды после каждого следующего шага. 
-12. Теперь посмотрите изменения в файле `README.md`, выполнив команды `git diff` и `git diff --staged`.
+7. Выполните команду `git status` и запомните результат.
+8. Отредактируйте файл `README.md` любым удобным способом, тем самым переведя файл в состояние `Modified`.
+9. Ещё раз выполните `git status` и продолжайте проверять вывод этой команды после каждого следующего шага. 
+10. Теперь посмотрите изменения в файле `README.md`, выполнив команды `git diff` и `git diff --staged`.
 
 ```script bash
 git diff
@@ -68,11 +68,10 @@ git diff
 ```script bash
 git diff --staged
 ```
-
-14. Переведите файл в состояние `staged` (или, как говорят, просто добавьте файл в коммит) командой `git add README.md`.
-15. И ещё раз выполните команды `git diff` и `git diff --staged`. Поиграйте с изменениями и этими командами, чтобы чётко понять, что и когда они отображают. 
-16. Теперь можно сделать коммит `git commit -m 'First commit'`.
-17. И ещё раз посмотреть выводы команд `git status`, `git diff` и `git diff --staged`.
+11. Переведите файл в состояние `staged` (или, как говорят, просто добавьте файл в коммит) командой `git add README.md`.
+12. И ещё раз выполните команды `git diff` и `git diff --staged`. Поиграйте с изменениями и этими командами, чтобы чётко понять, что и когда они отображают. 
+13. Теперь можно сделать коммит `git commit -m 'First commit'`.
+14. И ещё раз посмотреть выводы команд `git status`, `git diff` и `git diff --staged`.
 
 ### Создание файлов `.gitignore` и второго коммита
 
