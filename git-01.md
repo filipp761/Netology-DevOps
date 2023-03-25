@@ -134,14 +134,16 @@ git diff --staged
     * `Prepare to delete and move` — после добавления двух временных файлов.
     * `Moved and deleted` — после удаления и перемещения временных файлов. 
 2. Проверьте это, используя комманду `git log`. Подробно о формате вывода этой команды мы поговорим на следующем занятии, но посмотреть, что она отображает, можно уже сейчас.
-
- ![alt text](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/img/git01_log.png)
+3. 
+ ![alt text](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/img/git01_commit.png)
 
 ### Отправка изменений в репозиторий
 
 Выполните команду `git push`, если Git запросит логин и пароль — введите ваши логин и пароль от GitHub. 
 
 В качестве результата отправьте ссылку на репозиторий. 
+
+https://github.com/filipp761/devops-netology.git
 
 ## Задание 2. Знакомство с документаций
 
