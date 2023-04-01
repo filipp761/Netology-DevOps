@@ -65,7 +65,6 @@ https://gitlab.com/YOUR_LOGIN/devops-netology. Изучите предлагае
 
 ```script bash
  git push -u gitlab main
-
 ```
 
 10. Обратите внимание, как изменился результат работы команды `git remote -v`.
