@@ -32,10 +32,10 @@
 
 ## Системы управления версиями Git
 
-1. [Системы контроля версий](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/git-01.md).
+Git-01. [Системы контроля версий](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/git-01.md).
 
-2. [Основы Git](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/git-02.md).
+Git-02. [Основы Git](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/git-02.md).
 
-3. [Ветвления в Git](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/git-03.md).
+Git-03. [Ветвления в Git](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/git-03.md).
 
-4. [Инструменты в Git](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/git-04.md).
+Git-04. [Инструменты в Git](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/git-04.md).
