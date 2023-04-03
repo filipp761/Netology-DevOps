@@ -43,6 +43,9 @@
 2. После регистрации или авторизации в GitLab создайте новый проект, нажав на ссылку `Create a projet`. 
 Желательно назвать также, как и в GitHub — `devops-netology` и `visibility level`, выбрать `Public`.
 3. Галочку `Initialize repository with a README` лучше не ставить, чтобы не пришлось разрешать конфликты.
+
+ ![alt text](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/img/git02_Create_Project_GitLab.png)
+
 4. Если вы зарегистрировались при помощи аккаунта в другой системе и не указали пароль, то увидите сообщение:
 `You won't be able to pull or push project code via HTTPS until you set a password on your account`. 
 Тогда перейдите [по ссылке](https://gitlab.com/profile/password/edit) из этого сообщения и задайте пароль. 
@@ -50,9 +53,14 @@
 5. Перейдите на страницу созданного вами репозитория, URL будет примерно такой:
 https://gitlab.com/YOUR_LOGIN/devops-netology. Изучите предлагаемые варианты для начала работы в репозитории в секции
 `Command line instructions`. 
+
+ ![alt text](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/img/git02_Command_line_instructions.png)
+
 6. Запомните вывод команды `git remote -v`.
 
-8. Из-за того, что это будет наш дополнительный репозиторий, ни один вариант из перечисленных в инструкции (на странице 
+ ![alt text](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/img/git02_git_remote.png)
+
+7. Из-за того, что это будет наш дополнительный репозиторий, ни один вариант из перечисленных в инструкции (на странице 
 вновь созданного репозитория) нам не подходит. Поэтому добавляем этот репозиторий, как дополнительный `remote`, к созданному
 репозиторию в рамках предыдущего домашнего задания:
 `git remote add gitlab https://gitlab.com/YOUR_LOGIN/devops-netology.git`.
@@ -60,6 +68,7 @@ https://gitlab.com/YOUR_LOGIN/devops-netology. Изучите предлагае
 ```script bash
  git remote add gitlab git@gitlab.com:filipp761/devops-netology.git
 ```
+ ![alt text](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/img/git02_remote_add.png)
 
 8. Отправьте изменения в новый удалённый репозиторий `git push -u gitlab main`.
 
@@ -67,7 +76,13 @@ https://gitlab.com/YOUR_LOGIN/devops-netology. Изучите предлагае
  git push -u gitlab main
 ```
 
-10. Обратите внимание, как изменился результат работы команды `git remote -v`.
+ ![alt text](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/img/git02_push_gitlab.png)
+ 
+ ![alt text](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/img/git02_gitlab.png)
+
+9. Обратите внимание, как изменился результат работы команды `git remote -v`.
+
+ ![alt text](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/img/git02_remote_add.png)
 
 #### Как изменить видимость репозитория в  GitLab — сделать его публичным 
 
@@ -76,6 +91,8 @@ https://gitlab.com/YOUR_LOGIN/devops-netology. Изучите предлагае
 * Разверните раздел «Видимость» -> «Функции проекта» -> «Разрешения».
 * Измените видимость проекта на Public.
 * Нажмите «Сохранить изменения».
+
+ ![alt text](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/img/git02_visibility_project.png)
 
 ### Bitbucket* (задание со звёздочкой) 
 
@@ -132,11 +149,20 @@ origin-https	https://github.com/andrey-borue/devops-netology.git (push)
 исправить её и выложить исправленный код в продакшн. Мы никуда не будем выкладывать код, но пометим некоторые коммиты тегами и создадим от них ветки. 
 
 1. Создайте легковестный тег `v0.0` на HEAD-коммите и запуште его во все три добавленных на предыдущем этапе `upstream`.
+
+ ![alt text](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/img/git02_tags_v0.png)
+
+ ![alt text](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/img/git02_show_v0.png)
+ 
+ ![alt text](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/img/git02_remote_v.png)
+ 
 2. Аналогично создайте аннотированный тег `v0.1`.
 3. Перейдите на страницу просмотра тегов в GitHab (и в других репозиториях) и посмотрите, чем отличаются созданные теги. 
     * в GitHub — https://github.com/YOUR_ACCOUNT/devops-netology/releases;
     * в GitLab — https://gitlab.com/YOUR_ACCOUNT/devops-netology/-/tags;
     * в Bitbucket — список тегов расположен в выпадающем меню веток на отдельной вкладке. 
+
+ ![alt text](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/img/git02_tags.png)
 
 ## Задание 3. Ветки 
 
@@ -146,11 +172,19 @@ origin-https	https://github.com/andrey-borue/devops-netology.git (push)
 2. Посмотрите лог коммитов и найдите хеш коммита с названием `Prepare to delete and move`, который был создан в пределах предыдущего домашнего задания. 
 3. Выполните `git checkout` по хешу найденного коммита. 
 4. Создайте новую ветку `fix`, базируясь на этом коммите `git switch -c fix`.
+
+ ![alt text](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/img/git02_checkout.png)
+
 5. Отправьте новую ветку в репозиторий на GitHub `git push -u origin fix`.
+
+ ![alt text](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/img/git02_push_fix.png)
+
 6. Посмотрите, как визуально выглядит ваша схема коммитов: https://github.com/YOUR_ACCOUNT/devops-netology/network. 
 7. Теперь измените содержание файла `README.md`, добавив новую строчку.
 8. Отправьте изменения в репозиторий и посмотрите, как изменится схема на странице https://github.com/YOUR_ACCOUNT/devops-netology/network 
 и как изменится вывод команды `git log`.
+
+ ![alt text](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/img/git02_push_fix_2.png)
 
 ## Задание 4. Упрощаем себе жизнь
 
@@ -158,8 +192,17 @@ origin-https	https://github.com/andrey-borue/devops-netology.git (push)
 
 1. В используемой IDE PyCharm откройте визуальный редактор работы с Git, находящийся в меню View -> Tool Windows -> Git.
 2. Измените какой-нибудь файл, и он сразу появится на вкладке `Local Changes`, отсюда можно выполнить коммит, нажав на кнопку внизу этого диалога. 
+
+ ![alt text](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/img/pycharm_add file.png)
+
 3. Элементы управления для работы с Git будут выглядеть примерно так:   
+
+ ![alt text](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/img/git02_PyCharm.png)
+
 4. Попробуйте выполнить пару коммитов, используя IDE. 
+
+ ![alt text](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/img/git02_PyCharm_Push.png)
+
 
 [По ссылке](https://www.jetbrains.com/help/pycharm/commit-and-push-changes.html) можно найти справочную информацию по визуальному интерфейсу. 
 
