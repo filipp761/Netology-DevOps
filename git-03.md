@@ -44,11 +44,13 @@ done
 
 **Шаг 2.** Создадим коммит с описанием `prepare for merge and rebase` и отправим его в ветку main. 
 
- ![alt text](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/img/git03_prepare for merge and rebase.png)
+ ![alt text](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/img/git03_prepare_for_merge_and_rebase.png)
 
 #### Подготовка файла merge.sh 
  
 **Шаг 1.** Создайте ветку `git-merge`. 
+
+ ![alt text](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/img/git03_git_branch_git-merge.png)
 
 **Шаг 2**. Замените в ней содержимое файла `merge.sh` на:
 
@@ -64,6 +66,11 @@ done
 ```
 
 **Шаг 3.** Создайте коммит `merge: @ instead *`, отправьте изменения в репозиторий.  
+
+ ![alt text](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/img/git03_merge_instead.png)
+ 
+ ![alt text](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/img/git03_git_merge_GitHub.png)
+
 **Шаг 4.** Разработчик подумал и решил внести ещё одно изменение в `merge.sh`:
  
 ```bash
@@ -81,6 +88,8 @@ done
 Теперь скрипт будет отображать каждый переданный ему параметр отдельно. 
 
 **Шаг 5.** Создайте коммит `merge: use shift` и отправьте изменения в репозиторий. 
+
+ ![alt text](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/img/git03_use_shift.png)
 
 #### Изменим main  
 
@@ -105,13 +114,21 @@ echo "====="
 
 **Шаг 3.** Отправляем изменённую ветку `main` в репозиторий.
 
+ ![alt text](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/img/git03_main_rebase.png)
+
 #### Подготовка файла rebase.sh  
 
 **Шаг 1.** Предположим, что теперь другой участник нашей команды не сделал `git pull` либо просто хотел ответвиться не от последнего коммита в `main`, а от коммита, когда мы только создали два файла
 `merge.sh` и `rebase.sh` на первом шаге.  
 Для этого при помощи команды `git log` найдём хеш коммита `prepare for merge and rebase` и выполним `git checkout` на него так:
 `git checkout 8baf217e80ef17ff577883fda90f6487f67bbcea` (хеш будет другой).
+
+ ![alt text](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/img/git03_git_checkout.png)
+
 **Шаг 2.** Создадим ветку `git-rebase`, основываясь на текущем коммите. 
+
+ ![alt text](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/img/git03_git_branch_git-rebase.png)
+
 **Шаг 3.** И изменим содержимое файла `rebase.sh` на следующее, тоже починив скрипт, но немного в другом стиле:
 
 ```bash
@@ -140,7 +157,7 @@ echo "====="
 Если всё было сделано правильно, то на странице `network` в GitHub, находящейся по адресу 
 `https://github.com/ВАШ_ЛОГИН/ВАШ_РЕПОЗИТОРИЙ/network`, будет примерно такая схема:
   
-![Созданы обе ветки](img/01.png)
+ ![alt text](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/img/git03_itog.png)
 
 #### Merge
 
@@ -160,13 +177,16 @@ Total 1 (delta 0), reused 0 (delta 0), pack-reused 0
 ```  
 
 В результате получаем такую схему:
-  
-![Первый мерж](img/02.png)
+ 
+ ![alt text](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/img/git03_git_merge.png)
 
 #### Rebase
 
 **Шаг 1.** Перед мержем ветки `git-rebase` выполним её `rebase` на main. Да, мы специально создали ситуацию с конфликтами, чтобы потренироваться их решать. 
 **Шаг 2.** Переключаемся на ветку `git-rebase` и выполняем `git rebase -i main`. 
+
+ ![alt text](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/img/git03_rebase.png)
+
 В открывшемся диалоге должно быть два выполненных коммита, давайте заодно объединим их в один, 
 указав слева от нижнего `fixup`. 
 В результате получаем:
@@ -232,6 +252,8 @@ Merge branch 'git-merge'
 ```
 Successfully rebased and updated refs/heads/git-rebase
 ```
+![alt text](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/img/git03_messages.png)
+
 
 **Шаг 7.** И попробуем выполнить `git push` либо `git push -u origin git-rebase`, чтобы точно указать, что и куда мы хотим запушить. 
 
@@ -247,6 +269,9 @@ hint: its remote counterpart. Integrate the remote changes (e.g.
 hint: 'git pull ...') before pushing again.
 hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 ```
+
+ ![alt text](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/img/git03_rebase_push_error.png)
+
 
 Это произошло, потому что мы пытаемся перезаписать историю. 
 
@@ -266,6 +291,8 @@ To github.com:andrey-borue/devops-netology.git
 Branch 'git-rebase' set up to track remote branch 'git-rebase' from 'origin'.
 ```
 
+ ![alt text](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/img/git03_rebase_push_seccesfull.png)
+
 **Шаг 9**. Теперь можно смержить ветку `git-rebase` в main без конфликтов и без дополнительного мерж-комита простой перемоткой: 
 
 ```
@@ -279,6 +306,8 @@ Fast-forward
  branching/rebase.sh | 3 +--
  1 file changed, 1 insertion(+), 2 deletions(-)
 ```
+
+ ![alt text](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/img/git03_git_merge_rebase.png)
 
 *В качестве результата работы по всем заданиям приложите ссылку на .md-файл в вашем репозитории.*
  
