@@ -38,10 +38,13 @@ for param in "$*"; do
     count=$(( $count + 1 ))
 done
 ```
+ ![alt text](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/img/git03_add_file.png)
 
 Этот скрипт отображает на экране все параметры одной строкой, а не разделяет их.
 
 **Шаг 2.** Создадим коммит с описанием `prepare for merge and rebase` и отправим его в ветку main. 
+
+ ![alt text](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/img/git03_prepare for merge and rebase.png)
 
 #### Подготовка файла merge.sh 
  
