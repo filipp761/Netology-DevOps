@@ -210,6 +210,10 @@ origin-https	https://github.com/andrey-borue/devops-netology.git (push)
 Подробней о визуальном интерфейсе мы расскажем на одной из следующих лекций.
 
 *В качестве результата работы по всем заданиям приложите ссылки на ваши репозитории в GitHub, GitLab и Bitbucket*.  
+
+https://gitlab.com/filipp761/devops-netology
+
+https://github.com/filipp761/devops-netology
  
 ----
 
