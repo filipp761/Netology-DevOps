@@ -117,9 +117,20 @@ git diff --staged
 2. В случае необходимости обратитесь к [официальной документации](https://git-scm.com/book/ru/v2/Основы-Git-Запись-изменений-в-репозиторий) — здесь подробно описано, как выполнить следующие шаги. 
 3. Удалите файл `will_be_deleted.txt` с диска и из репозитория. 
 
+```script bash
+rm will_be_deleted.txt
+```
+```script bash
+git rm will_be_deleted.txt
+```
+
  ![alt text](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/img/git01_deleted.png)
 
 5. Переименуйте (переместите) файл `will_be_moved.txt` на диске и в репозитории, чтобы он стал называться `has_been_moved.txt`.
+
+```script bash
+git mv will_be_moved.txt has_been_moved.txt
+```
 
  ![alt text](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/img/git01_rename.png)
 
