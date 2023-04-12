@@ -150,19 +150,36 @@ origin-https	https://github.com/andrey-borue/devops-netology.git (push)
 
 1. Создайте легковестный тег `v0.0` на HEAD-коммите и запуште его во все три добавленных на предыдущем этапе `upstream`.
 
- ![alt text](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/img/git02_tags_v0.png)
+```script bash
+git tag -a v0.0 -m 'tag v0.0'
+```
 
- ![alt text](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/img/git02_show_v0.png)
- 
- ![alt text](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/img/git02_remote_v.png)
+ ![alt text](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/img/git02_tags_v0.png)
  
 2. Аналогично создайте аннотированный тег `v0.1`.
+
+```script bash
+git tag v0.1'
+```
+
+Просмотр наличия созданных тегов
+
+ ![alt text](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/img/git02_tag.png)
+ 
+ С помощью команды git show вы можете посмотреть данные тега вместе с коммитом:
+ 
+ ```script bash
+ git show v0.0
+ git show v0.1
+ ```
+ ![alt text](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/img/git02_tag_show.png)
+
 3. Перейдите на страницу просмотра тегов в GitHab (и в других репозиториях) и посмотрите, чем отличаются созданные теги. 
     * в GitHub — https://github.com/filipp761/devops-netology/tags;
     * в GitLab — https://gitlab.com/filipp761/devops-netology;
     * в Bitbucket — список тегов расположен в выпадающем меню веток на отдельной вкладке. 
 
- ![alt text](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/img/git02_tags.png)
+ ![alt text](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/img/git02_tag.png)
 
 ## Задание 3. Ветки 
 
@@ -177,6 +194,7 @@ origin-https	https://github.com/andrey-borue/devops-netology.git (push)
 ```script bash
 git checkout v0.0
 ```
+ ![alt text](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/img/git02_checkout3.png)
 
 4. Создайте новую ветку `fix`, базируясь на этом коммите 
 
@@ -184,18 +202,22 @@ git checkout v0.0
 git checkout -b fix
 ```
 
- ![alt text](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/img/git02_checkout.png)
+ ![alt text](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/img/git02_checkout2.png)
 
 5. Отправьте новую ветку в репозиторий на GitHub `git push -u origin fix`.
 
 6. Посмотрите, как визуально выглядит ваша схема коммитов: https://github.com/filipp761/devops-netology/network. 
+
+![alt text](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/img/git02_fix.png)
  
 7. Теперь измените содержание файла `README.md`, добавив новую строчку.
 
 8. Отправьте изменения в репозиторий и посмотрите, как изменится схема на странице https://github.com/filipp761/devops-netology/network 
 и как изменится вывод команды `git log`.
 
- ![alt text](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/img/git02_push_fix_2.png)
+ ![alt text](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/img/git02_github_fix.png)
+ ![alt text](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/img/git02_gitlub_fix.png)
+ ![alt text](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/img/git02_gitlog.png)
 
 ## Задание 4. Упрощаем себе жизнь
 
