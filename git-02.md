@@ -158,8 +158,8 @@ origin-https	https://github.com/andrey-borue/devops-netology.git (push)
  
 2. Аналогично создайте аннотированный тег `v0.1`.
 3. Перейдите на страницу просмотра тегов в GitHab (и в других репозиториях) и посмотрите, чем отличаются созданные теги. 
-    * в GitHub — https://github.com/YOUR_ACCOUNT/devops-netology/releases;
-    * в GitLab — https://gitlab.com/YOUR_ACCOUNT/devops-netology/-/tags;
+    * в GitHub — https://github.com/filipp761/devops-netology/tags;
+    * в GitLab — https://gitlab.com/filipp761/devops-netology;
     * в Bitbucket — список тегов расположен в выпадающем меню веток на отдельной вкладке. 
 
  ![alt text](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/img/git02_tags.png)
@@ -171,17 +171,28 @@ origin-https	https://github.com/andrey-borue/devops-netology.git (push)
 1. Переключитесь обратно на ветку `main`, которая должна быть связана с веткой `main` репозитория на `github`.
 2. Посмотрите лог коммитов и найдите хеш коммита с названием `Prepare to delete and move`, который был создан в пределах предыдущего домашнего задания. 
 3. Выполните `git checkout` по хешу найденного коммита. 
-4. Создайте новую ветку `fix`, базируясь на этом коммите `git switch -c fix`.
+
+Т.к на этом коммите у меня создан tag, можно перейти по нему
+
+```script bash
+git checkout v0.0
+```
+
+4. Создайте новую ветку `fix`, базируясь на этом коммите 
+
+```script bash
+git checkout -b fix
+```
 
  ![alt text](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/img/git02_checkout.png)
 
 5. Отправьте новую ветку в репозиторий на GitHub `git push -u origin fix`.
 
- ![alt text](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/img/git02_push_fix.png)
-
-6. Посмотрите, как визуально выглядит ваша схема коммитов: https://github.com/YOUR_ACCOUNT/devops-netology/network. 
+6. Посмотрите, как визуально выглядит ваша схема коммитов: https://github.com/filipp761/devops-netology/network. 
+ 
 7. Теперь измените содержание файла `README.md`, добавив новую строчку.
-8. Отправьте изменения в репозиторий и посмотрите, как изменится схема на странице https://github.com/YOUR_ACCOUNT/devops-netology/network 
+
+8. Отправьте изменения в репозиторий и посмотрите, как изменится схема на странице https://github.com/filipp761/devops-netology/network 
 и как изменится вывод команды `git log`.
 
  ![alt text](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/img/git02_push_fix_2.png)
