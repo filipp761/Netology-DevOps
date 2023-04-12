@@ -179,7 +179,7 @@ git tag v0.1'
     * в GitLab — https://gitlab.com/filipp761/devops-netology;
     * в Bitbucket — список тегов расположен в выпадающем меню веток на отдельной вкладке. 
 
- ![alt text](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/img/git02_tag.png)
+ ![alt text](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/img/git02_tags.png)
 
 ## Задание 3. Ветки 
 
