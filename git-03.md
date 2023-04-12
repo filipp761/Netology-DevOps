@@ -67,7 +67,7 @@ done
 
 **Шаг 3.** Создайте коммит `merge: @ instead *`, отправьте изменения в репозиторий.  
 
- ![alt text](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/img/git03_merge_instead.png)
+ ![alt text](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/img/git03_instead.png)
  
  ![alt text](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/img/git03_git_merge_GitHub.png)
 
@@ -89,11 +89,12 @@ done
 
 **Шаг 5.** Создайте коммит `merge: use shift` и отправьте изменения в репозиторий. 
 
- ![alt text](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/img/git03_use_shift.png)
+ ![alt text](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/img/git03_merge_use_shift.png)
 
 #### Изменим main  
 
 **Шаг 1.** Вернитесь в ветку `main`. 
+
 **Шаг 2.** Предположим, что пока мы работали над веткой `git-merge`, кто-то изменил `main`. Для этого
 изменим содержимое файла `rebase.sh` на:
 
@@ -109,12 +110,13 @@ done
 
 echo "====="
 ```
+![alt text](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/img/git03_main_update_rebase.png)
 
 В этом случае скрипт тоже будет отображать каждый параметр в новой строке. 
 
 **Шаг 3.** Отправляем изменённую ветку `main` в репозиторий.
 
- ![alt text](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/img/git03_main_rebase.png)
+ ![alt text](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/img/git03_Github_main.png)
 
 #### Подготовка файла rebase.sh  
 
@@ -126,6 +128,10 @@ echo "====="
  ![alt text](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/img/git03_git_checkout.png)
 
 **Шаг 2.** Создадим ветку `git-rebase`, основываясь на текущем коммите. 
+
+```bash
+git checkout -b git-rebase
+```
 
  ![alt text](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/img/git03_git_branch_git-rebase.png)
 
@@ -157,7 +163,7 @@ echo "====="
 Если всё было сделано правильно, то на странице `network` в GitHub, находящейся по адресу 
 `https://github.com/ВАШ_ЛОГИН/ВАШ_РЕПОЗИТОРИЙ/network`, будет примерно такая схема:
   
- ![alt text](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/img/git03_itog.png)
+ ![alt text](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/img/git03_Prom_Itog.png)
 
 #### Merge
 
