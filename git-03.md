@@ -161,7 +161,7 @@ echo "====="
 а с rebase бывают сложности, поэтому давайте смержим все наработки в `main` и разрешим конфликты. 
 
 Если всё было сделано правильно, то на странице `network` в GitHub, находящейся по адресу 
-`https://github.com/ВАШ_ЛОГИН/ВАШ_РЕПОЗИТОРИЙ/network`, будет примерно такая схема:
+`https://github.com/filipp761/devops-netology/network`, будет примерно такая схема:
   
  ![alt text](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/img/git03_Prom_Itog.png)
 
@@ -170,25 +170,31 @@ echo "====="
 Сливаем ветку `git-merge` в main и отправляем изменения в репозиторий, должно получиться без конфликтов:
 
 ```bash
-$ git merge git-merge
+root@git:/home/philipp/devops-netology# git merge git-merge
 Merge made by the 'recursive' strategy.
  branching/merge.sh | 5 +++--
  1 file changed, 3 insertions(+), 2 deletions(-)
-$ git push
-#!/bin/bash
-Enumerating objects: 1, done.
-Counting objects: 100% (1/1), done.
-Writing objects: 100% (1/1), 223 bytes | 223.00 KiB/s, done.
-Total 1 (delta 0), reused 0 (delta 0), pack-reused 0
+root@git:/home/philipp/devops-netology# git push
+Перечисление объектов: 7, готово.
+Подсчет объектов: 100% (7/7), готово.
+При сжатии изменений используется до 3 потоков
+Сжатие объектов: 100% (3/3), готово.
+Запись объектов: 100% (3/3), 374 bytes | 374.00 KiB/s, готово.
+Всего 3 (изменения 1), повторно использовано 0 (изменения 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To github.com:filipp761/devops-netology.git
+   cfc5ebf..c354f00  main -> main
+root@git:/home/philipp/devops-netology#
 ```  
 
 В результате получаем такую схему:
  
- ![alt text](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/img/git03_git_merge.png)
+ ![alt text](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/img/git03_merge_git_merge.png)
 
 #### Rebase
 
 **Шаг 1.** Перед мержем ветки `git-rebase` выполним её `rebase` на main. Да, мы специально создали ситуацию с конфликтами, чтобы потренироваться их решать. 
+
 **Шаг 2.** Переключаемся на ветку `git-rebase` и выполняем `git rebase -i main`. 
 
  ![alt text](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/img/git03_rebase.png)
@@ -198,15 +204,16 @@ Total 1 (delta 0), reused 0 (delta 0), pack-reused 0
 В результате получаем:
 
 ```bash
-$ git rebase -i main
-Auto-merging branching/rebase.sh
-CONFLICT (content): Merge conflict in branching/rebase.sh
-error: could not apply dc4688f... git 2.3 rebase @ instead *
+root@git:/home/philipp/devops-netology# git rebase -i main
+Автослияние branching/rebase.sh
+КОНФЛИКТ (содержимое): Конфликт слияния в branching/rebase.sh
+error: не удалось применить коммит d000208… git-rebase 1
 Resolve all conflicts manually, mark them as resolved with
 "git add/rm <conflicted_files>", then run "git rebase --continue".
 You can instead skip this commit: run "git rebase --skip".
 To abort and get back to the state before "git rebase", run "git rebase --abort".
-Could not apply dc4688f... git 2.3 rebase @ instead *
+Could not apply d000208... git-rebase 1
+root@git:/home/philipp/devops-netology#
 ``` 
 
 Если посмотреть содержимое файла `rebase.sh`, то увидим метки, оставленные Git для решения конфликта:
@@ -232,24 +239,85 @@ done
 echo "\$@ Parameter #$count = $param"
 ```
 
+Получаем:
+
+```bash
+#!/bin/bash
+# display command line options
+
+count=1
+for param in "$@"; do
+    echo "\$@ Parameter #$count = $param"
+    count=$(( $count + 1 ))
+done
+
+echo "====="
+```
+
 **Шаг 4.** Сообщим Git, что конфликт решён `git add rebase.sh` и продолжим rebase `git rebase --continue`.
 
+```bash
+root@git:/home/philipp/devops-netology# git add branching/rebase.sh
+root@git:/home/philipp/devops-netology# git rebase --continue
+Автослияние branching/rebase.sh
+КОНФЛИКТ (содержимое): Конфликт слияния в branching/rebase.sh
+error: не удалось применить коммит 1d53d3b… git-rebase 2
+Resolve all conflicts manually, mark them as resolved with
+"git add/rm <conflicted_files>", then run "git rebase --continue".
+You can instead skip this commit: run "git rebase --skip".
+To abort and get back to the state before "git rebase", run "git rebase --abort".
+Could not apply 1d53d3b... git-rebase 2
+root@git:/home/philipp/devops-netology#
+```
+
 **Шаг 5.** Опять получим конфликт в файле `rebase.sh` при попытке применения нашего второго коммита. Давайте разрешим конфликт, оставив строчку `echo "Next parameter: $param"`.
+
+```bash
+#!/bin/bash
+# display command line options
+
+count=1
+for param in "$@"; do
+    echo "Next parameter: $param"
+    count=$(( $count + 1 ))
+done
+
+echo "====="
+```
 
 **Шаг 6.** Далее опять сообщаем Git о том, что конфликт разрешён — `git add rebase.sh` — и продолжим rebase — `git rebase --continue`.
 
 В результате будет открыт текстовый редактор, предлагающий написать комментарий к новому объединённому коммиту:
 
 ```
-# This is a combination of 2 commits.
-# This is the 1st commit message:
+# Это объединение 2 коммитов.
+# Это 1-е сообщение коммита:
 
-Merge branch 'git-merge'
+Merge branch 'git-merge' into main
 
-# The commit message #2 will be skipped:
+# Сообщение коммита номер #2 будет пропущено:
 
-# git 2.3 rebase @ instead * (2)
+# git-rebase 2
+
+# Пожалуйста, введите сообщение коммита для ваших изменений. Строки,
+# начинающиеся с «#» будут проигнорированы, а пустое сообщение
+# отменяет процесс коммита.
+#
+# Дата:      Thu Apr 13 13:41:34 2023 +0300
+#
+# интерактивное перемещение в процессе; над c354f00
+# Последняя команда выполнена (2 команды выполнено):
+#    pick d000208 git-rebase 1
+#    fixup 1d53d3b git-rebase 2
+# Команд больше не осталось.
+# Вы сейчас перемещаете ветку «git-rebase» над «c354f00».
+#
+# Изменения, которые будут включены в коммит:
+#       изменено:      branching/merge.sh
+#       изменено:      branching/rebase.sh
+
 ```
+![alt text](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/img/git03_messages.png)
 
 Все строчки, начинающиеся на `#`, будут проигнорированны. 
 
@@ -258,8 +326,6 @@ Merge branch 'git-merge'
 ```
 Successfully rebased and updated refs/heads/git-rebase
 ```
-![alt text](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/img/git03_messages.png)
-
 
 **Шаг 7.** И попробуем выполнить `git push` либо `git push -u origin git-rebase`, чтобы точно указать, что и куда мы хотим запушить. 
 
@@ -284,17 +350,17 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 **Шаг 8.** Чтобы Git позволил нам это сделать, добавим флаг `force`:
 
 ```bash
-git push -u origin git-rebase -f
-Enumerating objects: 10, done.
-Counting objects: 100% (9/9), done.
-Delta compression using up to 12 threads
-Compressing objects: 100% (4/4), done.
-Writing objects: 100% (4/4), 443 bytes | 443.00 KiB/s, done.
-Total 4 (delta 1), reused 0 (delta 0), pack-reused 0
-remote: Resolving deltas: 100% (1/1), completed with 1 local object.
-To github.com:andrey-borue/devops-netology.git
- + 1829df1...e3b942b git-rebase -> git-rebase (forced update)
-Branch 'git-rebase' set up to track remote branch 'git-rebase' from 'origin'.
+root@git:/home/philipp/devops-netology# git push -u origin git-rebase -f
+Перечисление объектов: 10, готово.
+Подсчет объектов: 100% (10/10), готово.
+При сжатии изменений используется до 3 потоков
+Сжатие объектов: 100% (4/4), готово.
+Запись объектов: 100% (4/4), 430 bytes | 215.00 KiB/s, готово.
+Всего 4 (изменения 2), повторно использовано 0 (изменения 0)
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To github.com:filipp761/devops-netology.git
+ + 1d53d3b...b597204 git-rebase -> git-rebase (forced update)
+Ветка «git-rebase» отслеживает внешнюю ветку «git-rebase» из «origin».
 ```
 
  ![alt text](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/img/git03_rebase_push_seccesfull.png)
