@@ -24,10 +24,13 @@
 ```script bash
 git show aefea
 ```
+ ![alt text](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/img/git04_show_aefea.png)
 
 2. Ответьте на вопросы.
 
 2.1 Какому тегу соответствует коммит `85024d3`?
+
+ ![alt text](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/img/git04_85024d3.png)
 
 2.2 Сколько родителей у коммита `b8d720`? Напишите их хеши.
 
@@ -47,6 +50,7 @@ git log --pretty=%P -n 1 b8d720
 ```script bash
 git show -s --pretty=%P b8d720
 ```   
+ ![alt text](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/img/git04_85024d3.png)
   
 * Перечислите хеши и комментарии всех коммитов, которые были сделаны между тегами  v0.12.23 и v0.12.24.
   
@@ -54,10 +58,29 @@ git show -s --pretty=%P b8d720
 git log v0.12.23..v0.12.24 --pretty=oneline
 ```
   
+ ![alt text](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/img/git04_2.3.png) 
+  
 * Найдите коммит, в котором была создана функция `func providerSource`, её определение в коде выглядит так: `func providerSource(...)` (вместо троеточия перечислены аргументы).
+  
+```script bash
+git log -S func providerSource
+```
+ ![alt text](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/img/git04_providerSource.png) 
+  
 * Найдите все коммиты, в которых была изменена функция `globalPluginDirs`.
+  
+```script bash
+git log -globalPluginDirs --stat
+```  
+ ![alt text](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/img/git04_globalPluginDirs.png) 
+  
 * Кто автор функции `synchronizedWriters`? 
-
+  
+```script bash
+git log -S synchronizedWriters --pretty=format:"%h %an"
+``` 
+ ![alt text](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/img/git04_providerSource.png) 
+  
 *В качестве решения ответьте на вопросы и опишите, как были получены эти ответы.*
 
 ---
