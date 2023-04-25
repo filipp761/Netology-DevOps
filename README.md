@@ -43,3 +43,5 @@ Git-04. [Инструменты в Git](https://github.com/filipp761/Netology-sd
 ## Модуль 14. Виртуализация, базы данных и Terraform
 
 14.1 [Введение в виртуализацию](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/14-01.md).
+
+14.2 [Применение принципов IaaC в работе с виртуальными машинами](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/14-02.md).
