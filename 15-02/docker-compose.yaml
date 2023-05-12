@@ -1,0 +1,27 @@
+# Use postgres/example user/password credentials
+version: '3.1'
+
+
+
+volumes:
+    postgres_db: {}
+    postgres_backup: {}
+
+
+services:
+
+  db:
+    image: postgres:12
+    volumes:
+      - postgres_db:/var/lib/postgresql/data
+      - postgres_backup:/var/lib/postgresql/backup
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: cisco777!
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
+
