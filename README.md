@@ -49,3 +49,5 @@ Git-04. [Инструменты в Git](https://github.com/filipp761/Netology-sd
 ## Модуль 15. "Администрирование баз данных для DevOps-инженеров"
 
 15.1 [Типы и структура СУБД](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/15-01.md).
+
+15.2 [SQL](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/15-02.md).
