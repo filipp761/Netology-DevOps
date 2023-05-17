@@ -51,3 +51,7 @@ Git-04. [Инструменты в Git](https://github.com/filipp761/Netology-sd
 15.1 [Типы и структура СУБД](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/15-01.md).
 
 15.2 [SQL](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/15-02.md).
+
+15.3 [MySQL](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/15-03.md).
+
+15.4 [PostgreSQL](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/15-04.md).
