@@ -50,7 +50,7 @@ Git-04. [Инструменты в Git](https://github.com/filipp761/Netology-sd
 
 14.4 [Оркестрация группой Docker-контейнеров на примере Docker Compose](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/14-04.md).
 
-14.5 [Оркестрация группой Docker-контейнеров на примере Docker Compose](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/05-virt-05-docker-swarm.md.md).
+14.5 [Оркестрация кластером Docker контейнеров на примере Docker Swarm](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/05-virt-05-docker-swarm.md.md).
 
 ## Модуль 15. "Администрирование баз данных для DevOps-инженеров"
 
