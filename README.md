@@ -62,4 +62,4 @@ Git-04. [Инструменты в Git](https://github.com/filipp761/Netology-sd
 
 15.4 [PostgreSQL](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/15-04.md).
 
-15.5 [Elasticsearch](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/06-db-05-elasticsearch.md.md).
+15.5 [Elasticsearch](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/06-db-05-elasticsearch.md).
