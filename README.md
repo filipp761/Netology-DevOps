@@ -46,6 +46,10 @@ Git-04. [Инструменты в Git](https://github.com/filipp761/Netology-sd
 
 14.2 [Применение принципов IaaC в работе с виртуальными машинами](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/14-02.md).
 
+14.3 [Введение. Экосистема. Архитектура. Жизненный цикл Docker-контейнера](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/14-03.md).
+
+14.4 [Оркестрация группой Docker-контейнеров на примере Docker Compose](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/14-04.md).
+
 ## Модуль 15. "Администрирование баз данных для DevOps-инженеров"
 
 15.1 [Типы и структура СУБД](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/15-01.md).
