@@ -31,6 +31,7 @@
 ```
 docker node ls
 ```
+![alt text](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/05-virt-05-docker-swarm/docker_node_ls.png)
 
 ## Задача 3
 
@@ -40,6 +41,7 @@ docker node ls
 ```
 docker service ls
 ```
+![alt text](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/05-virt-05-docker-swarm/docker_service.png)
 
 ## Задача 4 (*)
 
@@ -50,5 +52,8 @@ docker swarm update --autolock=true
 ```
 ---
 ### Ответ
+![alt text](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/05-virt-05-docker-swarm/autolock.png)
+![alt text](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/05-virt-05-docker-swarm/autolock_2.png)
+![alt text](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/05-virt-05-docker-swarm/autolock_3.png)
 * Команда ```docker swarm update --autolock=true``` создает новый ключ, используемый для шифрования открытых/закрытых ключей, используемых для шифрования/расшифровки журналов. При перезапуске Docker в память каждого управляющего узла загружается как ключ TLS, используемый для шифрования связи между узлами swarm, так и ключ, используемый для шифрования и расшифровки журналов Raft на диске. Docker может защитить общий ключ шифрования TLS и ключ, используемый для шифрования и расшифровки журналов Raft в состоянии покоя, позволяя вам стать владельцем этих ключей и требовать ручной разблокировки ваших менеджеров. Эта функция называется автоблокировкой.
 Когда Docker перезапустится, вы должны сначала разблокировать рой, используя ключ шифрования, сгенерированный Docker, когда рой был заблокирован. Вы можете изменить этот ключ шифрования в любое время.
