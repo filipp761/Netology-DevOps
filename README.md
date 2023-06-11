@@ -63,3 +63,15 @@ Git-04. [Инструменты в Git](https://github.com/filipp761/Netology-sd
 15.4 [PostgreSQL](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/15-04.md).
 
 15.5 [Elasticsearch](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/06-db-05-elasticsearch.md).
+
+## Модуль 16. «Облачная инфраструктура. Terraform»
+
+16.1 [Введение в Terraform](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/16-01.md).
+
+16.2 [SQL](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/16-02.md).
+
+16.3 [MySQL](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/16-03.md).
+
+16.4 [PostgreSQL](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/16-04.md).
+
+16.5 [Elasticsearch](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/16-05.md).
