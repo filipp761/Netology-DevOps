@@ -36,6 +36,20 @@
 9. Объясните, почему при этом не был удален docker образ **nginx:latest** ? Ответ подкрепите выдержкой из документации провайдера.
 ------
 ### Ответ:
+* **2. Файл .gitignore. Файл для хранения секретной информации - personal.auto.tfvars**
+```
+# Local .terraform directories and files
+**/.terraform/*
+.terraform*
+
+# .tfstate files
+*.tfstate
+*.tfstate.*
+
+# own secret vars store.
+personal.auto.tfvars 
+```
+* **3. 
 
 
 
