@@ -50,6 +50,14 @@
 
 Установите Terraform при помощи менеджера пакетов, используемого в вашей операционной системе.
 В виде результата этой задачи приложите вывод команды `terraform --version`.
+____
+### Ответ
+```
+philipp@philipp-VirtualBox:~$ terraform --version
+Terraform v1.4.6
+on linux_amd64
+```
+
 
 ## Задача 3. Поддержка legacy-кода
 
@@ -62,9 +70,35 @@
 или виртуальной машине.
 
 ---
+### Ответ
+* **Установка версии terraform 0.12**
+```
+sudo mkdir - p /usr/local/tf12
+```
+* **Скопировать архив в отдельно созданную папку ```tf12``**
+```
+sudo mv terraform_0.12.0-alpha4_terraform_0.12.0-alpha4_linux_amd64.zip /usr/local/tf12/
+```
+* **Извлекаем архив*
+```
+sudo unzip terraform_0.12.0-alpha4_terraform_0.12.0-alpha4_linux_amd64.zip
+```
+* **Создайте символические ссылки для ```terraform 0.12```
+```
+sudo ln -s /usr/local/tf2/terraform /usr/bin/terraform12
 
-### Как cдавать задание
+chmod ugo+x /usr/bin/terraform*
+```
 
-Выполненное домашнее задание пришлите ссылкой на .md-файл в вашем репозитории.
+* **Проверка версии**
+```
+philipp@philipp-VirtualBox:~$ terraform -version && terraform12 -version
+Terraform v1.4.6
+on linux_amd64
+Terraform v0.12.0-alpha4 (2c36829d3265661d8edbd5014de8090ea7e2a076)
 
----
+Your version of Terraform is out of date! The latest version
+is 1.4.6. You can update by downloading from www.terraform.io/downloads.html
+philipp@philipp-VirtualBox:~$
+
+```
