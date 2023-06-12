@@ -86,7 +86,9 @@ resource "docker_container" "1nginx" {
 terraform apply –auto-approve: создает или обновляет инфраструктуру; этап утверждения пользователем пропускается.
 ```
 * **7. Уничтожьте созданные ресурсы с помощью ```terraform```. Убедитесь, что все ресурсы удалены. Приложите содержимое файла ```terraform.tfstate```.**
+
 ![alt text](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/07-terraform-01-intro2/terraform_tfstate.png)
+
 * **8. Объясните, почему при этом не был удален docker образ ```nginx:latest``` ? Ответ подкрепите выдержкой из документации провайдера.**
 ## Дополнительные задания (со звездочкой*)
 
