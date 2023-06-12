@@ -56,6 +56,7 @@ personal.auto.tfvars
 ```
 
 * **4. Раскомментируйте блок кода, примерно расположенный на строчках 29-42 файла ```main.tf```. Выполните команду ```terraform validate```. Объясните в чем заключаются намеренно допущенные ошибки? Исправьте их.** 
+![alt text](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/07-terraform-01-intro2/terraform_validate.png)
 ```
 resource "docker_image" {             
   name         = "nginx:latest"
@@ -78,11 +79,14 @@ resource "docker_container" "1nginx" {
 ```name  = "example_${random_password.random_string_fake.resuld}"```  - не верно указано имя 
 
 * **5. Выполните код. В качестве ответа приложите вывод команды ```docker ps```**
+![alt text](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/07-terraform-01-intro2/docker_ps.png)
 * **6. Замените имя docker-контейнера в блоке кода на hello_world, выполните команду terraform apply -auto-approve. Объясните своими словами, в чем может быть опасность применения ключа -auto-approve ? В качестве ответа дополнительно приложите вывод команды docker ps**
+![alt text](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/07-terraform-01-intro2/terraform_hello_world.png)
 ```
 terraform apply –auto-approve: создает или обновляет инфраструктуру; этап утверждения пользователем пропускается.
 ```
 * **7. Уничтожьте созданные ресурсы с помощью ```terraform```. Убедитесь, что все ресурсы удалены. Приложите содержимое файла ```terraform.tfstate```.**
+![alt text](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/07-terraform-01-intro2/terraform_tfstate.png)
 * **8. Объясните, почему при этом не был удален docker образ ```nginx:latest``` ? Ответ подкрепите выдержкой из документации провайдера.**
 ## Дополнительные задания (со звездочкой*)
 
@@ -94,7 +98,8 @@ terraform apply –auto-approve: создает или обновляет инф
 1. Изучите в документации provider [**Virtualbox**](https://registry.tfpla.net/providers/shekeriev/virtualbox/latest/docs/overview/index) от 
 shekeriev.
 2. Создайте с его помощью любую виртуальную машину. Чтобы не использовать VPN советуем выбрать любой образ с расположением в github из [**списка**](https://www.vagrantbox.es/)
-
+![alt text](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/07-terraform-01-intro2/terraform_plan_VB.png)
+![alt text](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/07-terraform-01-intro2/VB.png)
 В качестве ответа приложите plan для создаваемого ресурса и скриншот созданного в VB ресурса. 
 
 ------
