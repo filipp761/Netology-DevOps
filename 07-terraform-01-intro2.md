@@ -49,11 +49,32 @@
 # own secret vars store.
 personal.auto.tfvars 
 ```
-* **3. Выполните код проекта. Найдите  в State-файле секретное содержимое созданного ресурса **random_password**, пришлите в качестве ответа конкретный ключ и его значение** 
+* **3. Выполните код проекта. Найдите  в State-файле секретное содержимое созданного ресурса ```random_password```, пришлите в качестве ответа конкретный ключ и его значение** 
+![alt text](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/07-terraform-01-intro2/terraform_init.png)
 ```
 "result": "dmWjHCukOIeJoK2k"
 ```
+
 * **4. Раскомментируйте блок кода, примерно расположенный на строчках 29-42 файла ```main.tf```. Выполните команду ```terraform validate```. Объясните в чем заключаются намеренно допущенные ошибки? Исправьте их.** 
+```
+resource "docker_image" {             
+  name         = "nginx:latest"
+  keep_locally = true
+}
+
+resource "docker_container" "1nginx" {   
+  image = docker_image.nginx.image_id
+  name  = "example_${random_password.random_string_fake.resuld}"
+
+  ports {
+    internal = 80
+    external = 8000
+  }
+```
+* **resource "docker_image"** - не указано имя блока
+* **resource "docker_container" "1nginx"** - орфографическая ошибка, лишняя ```1```
+* **name  = "example_${random_password.random_string_fake.resuld}"**  - не верно указано имя 
+
 * **5. Выполните код. В качестве ответа приложите вывод команды ```docker ps```**
 * **6. Замените имя docker-контейнера в блоке кода на hello_world, выполните команду terraform apply -auto-approve. Объясните своими словами, в чем может быть опасность применения ключа -auto-approve ? В качестве ответа дополнительно приложите вывод команды docker ps**
 ```
