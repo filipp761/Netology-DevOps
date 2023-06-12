@@ -71,9 +71,11 @@ resource "docker_container" "1nginx" {
     external = 8000
   }
 ```
-* **resource "docker_image"** - не указано имя блока
-* **resource "docker_container" "1nginx"** - орфографическая ошибка, лишняя ```1```
-* **name  = "example_${random_password.random_string_fake.resuld}"**  - не верно указано имя 
+```resource "docker_image"``` - не указано имя блока
+
+```resource "docker_container" "1nginx"``` - орфографическая ошибка, лишняя ```1```
+
+```name  = "example_${random_password.random_string_fake.resuld}"```  - не верно указано имя 
 
 * **5. Выполните код. В качестве ответа приложите вывод команды ```docker ps```**
 * **6. Замените имя docker-контейнера в блоке кода на hello_world, выполните команду terraform apply -auto-approve. Объясните своими словами, в чем может быть опасность применения ключа -auto-approve ? В качестве ответа дополнительно приложите вывод команды docker ps**
