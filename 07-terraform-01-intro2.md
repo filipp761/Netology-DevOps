@@ -78,6 +78,23 @@ resource "docker_container" "1nginx" {
 
 ```name  = "example_${random_password.random_string_fake.resuld}"```  - не верно указано имя 
 
+* **Правильная конфигурация**
+```
+resource "docker_image" "nginx" {
+  name         = "nginx:latest"
+  keep_locally = true
+}
+
+resource "docker_container" "hello_world" {
+  image = docker_image.nginx.image_id
+  name  = "hello_world"
+
+  ports {
+    internal = 80
+    external = 8000
+  }
+}
+```
 * **5. Выполните код. В качестве ответа приложите вывод команды ```docker ps```**
 ![alt text](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/07-terraform-01-intro2/docker_ps.png)
 * **6. Замените имя docker-контейнера в блоке кода на hello_world, выполните команду terraform apply -auto-approve. Объясните своими словами, в чем может быть опасность применения ключа -auto-approve ? В качестве ответа дополнительно приложите вывод команды docker ps**
