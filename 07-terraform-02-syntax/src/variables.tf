@@ -1,7 +1,7 @@
 ###cloud vars
 variable "token" {
   type        = string
-  description = "OAuth-token; https://cloud.yandex.ru/docs/iam/concepts/authorization/oauth->
+  description = "OAuth-token; https://cloud.yandex.ru/docs/iam/concepts/authorization/oauth-token"
 }
 
 variable "cloud_id" {
@@ -37,6 +37,7 @@ variable "vm_web_image" {
   description = "ubuntu release name"
 }
 
+/*
 variable "vm_web_instance" {
   type        = string
   default     = "netology-develop-platform-web"
@@ -47,6 +48,17 @@ variable "vm_db_instance" {
   type        = string
   default     = "netology-develop-platform-db"
   description = "instance name"
+}
+*/
+
+variable "vm_name_instance" {
+  type        = map(string)
+  description = "instance name"
+  default = {
+        project = "netology",
+        dev = "develop",
+        platf = "platform"
+        }
 }
 
 variable "vm_web_resource" {
@@ -65,3 +77,4 @@ variable "vms_ssh_root_key" {
   default     = "..."
   description = "ssh-keygen -t ed25519"
 }
+
