@@ -14,7 +14,6 @@ variable "vm_db_resource" {
         }
 }
 
-
 data "yandex_compute_image" "ubuntu1" {
   family = var.vm_web_image
 }
