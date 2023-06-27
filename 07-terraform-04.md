@@ -30,6 +30,14 @@ module "vpc_dev" {
 ------
 ### Ответ:
 
+* **Установка terraform-docs**
+```
+curl -Lo ./terraform-docs.tar.gz https://github.com/terraform-docs/terraform-docs/releases/download/v0.16.0/terraform-docs-v0.16.0-$(uname)-amd64.tar.gz
+tar -xzf terraform-docs.tar.gz
+chmod +x terraform-docs
+sudo mv terraform-docs /usr/local/terraform-docs
+```
+
 ## Задание 3
 1. Выведите список ресурсов в стейте.
 2. Удалите из стейта модуль vpc.
