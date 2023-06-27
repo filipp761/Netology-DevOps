@@ -1,6 +1,6 @@
 # Домашнее задание к занятию "Продвинутые методы работы с Terraform"
 
-### Задание 1
+## Задание 1
 
 1. Возьмите из [демонстрации к лекции готовый код](https://github.com/netology-code/ter-homeworks/tree/main/04/demonstration1) для создания ВМ с помощью remote модуля.
 2. Создайте 1 ВМ, используя данный модуль. В файле cloud-init.yml необходимо использовать переменную для ssh ключа вместо хардкода. Передайте ssh-ключ в функцию template_file в блоке vars ={} .
@@ -9,8 +9,9 @@
 4. Предоставьте скриншот подключения к консоли и вывод команды ```sudo nginx -t```.
 
 ------
+### Ответ:
 
-### Задание 2
+## Задание 2
 
 1. Напишите локальный модуль vpc, который будет создавать 2 ресурса: **одну** сеть и **одну** подсеть в зоне, объявленной при вызове модуля. например: ```ru-central1-a```.
 2. Модуль должен возвращать значения vpc.id и subnet.id
@@ -26,20 +27,47 @@ module "vpc_dev" {
   cidr = "10.0.1.0/24"
 }
 ```
+------
+### Ответ:
 
-### Задание 3
+## Задание 3
 1. Выведите список ресурсов в стейте.
 2. Удалите из стейта модуль vpc.
 3. Импортируйте его обратно. Проверьте terraform plan - изменений быть не должно.
 Приложите список выполненных команд и вывод.
-
+------
+### Ответ:
+* **1. Выведите список ресурсов в стейте.**
+```
+philipp@philipp-VirtualBox:~/07-terraform-01-intro/ter-homeworks/04/src$ terraform state list
+module.vpc_dev.yandex_vpc_network.develop
+module.vpc_dev.yandex_vpc_subnet.develop
+```
+* **2. Выведите список ресурсов в стейте.**
+```
+philipp@philipp-VirtualBox:~/07-terraform-01-intro/ter-homeworks/04/src$ terraform state rm module.vpc_dev.yandex_vpc_network.develop
+Removed module.vpc_dev.yandex_vpc_network.develop
+Successfully removed 1 resource instance(s).
+```
+```
+philipp@philipp-VirtualBox:~/07-terraform-01-intro/ter-homeworks/04/src$ terraform state rm module.vpc_dev.yandex_vpc_subnet.develop
+Removed module.vpc_dev.yandex_vpc_subnet.develop
+Successfully removed 1 resource instance(s).
+```
+* ****
+```
+ terraform import 'module.vpc_dev.yandex_vpc_network.develop' enpi57roojhghkmf08b0
+```
+```
+terraform import 'module.vpc_dev.yandex_vpc_subnet.develop' e9bgv89ramoscnb35ur8
+```
 ## Дополнительные задания (со звездочкой*)
 
 **Настоятельно рекомендуем выполнять все задания под звёздочкой.**   Их выполнение поможет глубже разобраться в материале.   
 Задания под звёздочкой дополнительные (необязательные к выполнению) и никак не повлияют на получение вами зачета по этому домашнему заданию. 
 
 
-### Задание 4*
+## Задание 4*
 
 1. Измените модуль vpc так, чтобы он мог создать подсети во всех зонах доступности, переданных в переменной типа list(object) при вызове модуля.  
   
