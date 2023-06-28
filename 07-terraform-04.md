@@ -10,6 +10,8 @@
 
 ------
 ### Ответ:
+![alt text](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/07-terraform-04/img/console.png)
+![alt text](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/07-terraform-04/img/nginx.png)
 
 ## Задание 2
 
