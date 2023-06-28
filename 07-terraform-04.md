@@ -10,6 +10,7 @@
 
 ------
 ### Ответ:
+https://github.com/filipp761/Netology-DevOps/tree/main/07-terraform-04/demonstration1
 ![alt text](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/07-terraform-04/img/console.png)
 ![alt text](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/07-terraform-04/img/nginx.png)
 
@@ -39,6 +40,7 @@ tar -xzf terraform-docs.tar.gz
 chmod +x terraform-docs
 sudo mv terraform-docs /usr/local/terraform-docs
 ```
+https://github.com/filipp761/Netology-DevOps/tree/main/07-terraform-04/src
 
 ## Задание 3
 1. Выведите список ресурсов в стейте.
@@ -71,6 +73,7 @@ Successfully removed 1 resource instance(s).
 ```
 terraform import 'module.vpc_dev.yandex_vpc_subnet.develop' e9bgv89ramoscnb35ur8
 ```
+![alt text](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/07-terraform-04/img/IMPORT.png)
 ## Дополнительные задания (со звездочкой*)
 
 **Настоятельно рекомендуем выполнять все задания под звёздочкой.**   Их выполнение поможет глубже разобраться в материале.   
