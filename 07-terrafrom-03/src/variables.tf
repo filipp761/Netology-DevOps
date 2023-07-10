@@ -25,8 +25,47 @@ variable "default_cidr" {
   description = "https://cloud.yandex.ru/docs/vpc/operations/subnet-create"
 }
 
+##Создание диска 
+variable "disk_name" {
+  type = string
+  default = "disk"
+}
+
+## Создание ВМ с помощоью for_each
+variable "virtual_instance_for_each" {
+  description = ""
+  type = list(object({
+    vm_name = string
+    platform_id = string
+    cores = number
+    ram = number
+    core_fraction = number
+
+  }))
+  default = [ {
+    vm_name = "netology-develop-databases-main"
+    platform_id = "standard-v3"
+    cores = 2
+    ram = 2
+    core_fraction = 20
+  },
+  {
+    vm_name = "netology-develop-databases-replica"
+    platform_id = "standard-v3"
+    cores = 4
+    ram = 4
+    core_fraction = 50
+  }
+   ]
+}
+
 variable "vpc_name" {
   type        = string
   default     = "develop"
   description = "VPC network&subnet name"
+}
+
+variable "public_key" {
+  type    = string
+  default = ""
 }
