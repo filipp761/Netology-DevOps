@@ -35,7 +35,7 @@
 _____
 ### Ответ:
 
-![alt text](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/07-terraform-03/img/security.png)
+![alt text](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/07-terrafrom-03/img/security.png)
 
 ------
 
@@ -71,7 +71,12 @@ _____
 ------
 ### Ответ:
 
-![alt text](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/07-terraform-03/img/host.png)
+![alt text](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/07-terrafrom-03/img/host.png)
+
+**ОШИБКА**
+* Данные host для webserver и databases  создается нормально, а на storage выдает ошибку как на скриншоте
+![alt text](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/07-terrafrom-03/img/error.png)
+
 
 ## Дополнительные задания (со звездочкой*)
 
@@ -100,7 +105,7 @@ _____
 ------
 ### Ответ:
 
-![alt text](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/07-terraform-03/img/output.png)
+![alt text](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/07-terrafrom-03/img/output.png)
 
 ## Задание 6*(необязательное)
 
