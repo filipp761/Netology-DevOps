@@ -68,13 +68,7 @@ _____
 ------
 ### Ответ:
 
-![alt text](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/07-terrafrom-03/img/host.png)
-
-**ОШИБКА**
-* Данные host для webserver и databases  создается нормально, а на storage выдает ошибку как на скриншоте
-
-![alt text](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/07-terrafrom-03/img/error.png)
-
+![alt text](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/07-terrafrom-03/img/host2.png)
 
 Для общего зачета создайте в вашем GitHub репозитории новую ветку terraform-03. Закомитьте в эту ветку свой финальный код проекта, пришлите ссылку на коммит.   
 **Удалите все созданные ресурсы**.
@@ -108,7 +102,7 @@ _____
 ------
 ### Ответ:
 
-![alt text](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/07-terrafrom-03/img/output.png)
+![alt text](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/07-terrafrom-03/img/output2.png)
 
 ## Задание 6*(необязательное)
 
