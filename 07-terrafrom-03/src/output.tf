@@ -10,11 +10,9 @@ output "databases" {
   ]
 }
 
-/*
-output  "webserver" {
-    value = ({
-        for webserver in yandex_compute_instance.platform:
-        webserver.name => [webserver.name,webserver.id,webserver.fqdn]
-    })
+output "storage" {
+  value = [
+    for i in  yandex_compute_instance.storage.*: 
+   "name = ${i.name}, id = ${i.id}, fqdn = ${i.fqdn}"
+  ]
 }
-*/
