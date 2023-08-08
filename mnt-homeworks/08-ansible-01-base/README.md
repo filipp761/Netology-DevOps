@@ -29,3 +29,24 @@
 4. Добавьте новую группу хостов `fedora`, самостоятельно придумайте для неё переменную. В качестве образа можно использовать [этот вариант](https://hub.docker.com/r/pycontribs/fedora).
 5. Напишите скрипт на bash: автоматизируйте поднятие необходимых контейнеров, запуск ansible-playbook и остановку контейнеров.
 6. Все изменения должны быть зафиксированы и отправлены в ваш личный репозиторий.
+
+----
+### Ответ
+* **Установка Ansible**
+```bash
+#Add Ansible repository
+sudo apt-add-repository ppa:ansible/ansible
+
+#Run the update command
+sudo apt-get update
+
+#Install Ansible package
+sudo apt-get install ansible
+
+#Check Ansible Version
+ansible -version
+```
+* 1. Попробуйте запустить playbook на окружении из `test.yml`, зафиксируйте значение, которое имеет факт `some_fact` для указанного хоста при выполнении playbook.
+```
+img
+```
