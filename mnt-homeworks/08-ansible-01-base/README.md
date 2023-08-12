@@ -46,7 +46,42 @@ sudo apt-get install ansible
 #Check Ansible Version
 ansible -version
 ```
-* 1. Попробуйте запустить playbook на окружении из `test.yml`, зафиксируйте значение, которое имеет факт `some_fact` для указанного хоста при выполнении playbook.
+* **1. Попробуйте запустить playbook на окружении из `test.yml`, зафиксируйте значение, которое имеет факт `some_fact` для указанного хоста при выполнении playbook.**
 ```
 img
 ```
+* **2. Найдите файл с переменными (group_vars), в котором задаётся найденное в первом пункте значение, и поменяйте его на all default fact.**
+* **3. Воспользуйтесь подготовленным (используется `docker`) или создайте собственное окружение для проведения дальнейших испытаний.**
+```
+docker pull ubuntu
+docker pull centos
+```
+По-умолчанию в них нет python, поэтому его необходимо установить.
+
+**Для Centos7**
+
+При установке пакетов для Centos7 выдало данную ошибку
+```
+[root@mail ~]# yum update
+CentOS Linux 8 - AppStream   116  B/s |  38  B     00:00
+Ошибка: Не удалось загрузить метаданные для репозитория «appstream»: Cannot prepare internal mirrorlist: No URLs in mirrorlist
+```
+
+Чтоб решить проблему с скачиванием нужных пакетов из официальных репозиториев, 
+нужно перенаправить свои репозитории /etc/yum.repos.d/ на http://vault.centos.org вместо http://mirror.centos.org. 
+Делается это следующим образом:
+```
+sed -i 's/mirrorlist/#mirrorlist/g' /etc/yum.repos.d/CentOS-Linux-*
+sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.org|g' /etc/yum.repos.d/CentOS-Linux-*
+```
+Далее пакеты устанавливаются в обычном порядке.
+
+**Для Ubuntu**
+
+Установить Python для Ubuntu гораздо проще
+```
+sudo apt install python3.9
+```
+* **4. Проведите запуск playbook на окружении из `prod.yml`. Зафиксируйте полученные значения `some_fact` для каждого из `managed host`.**
+* **5. Добавьте факты в `group_vars` каждой из групп хостов так, чтобы для `some_fact` получились значения: для `deb` — `deb default fact`, для `el` — `el default fact`.**
+* **6.  Повторите запуск playbook на окружении `prod.yml`. Убедитесь, что выдаются корректные значения для всех хостов.**
