@@ -115,6 +115,9 @@ ansible-vault decrypt group_vars/deb/examp.yml
 ansible-vault decrypt group_vars/el/examp.yml 
 ```
 * **2. Зашифруйте отдельное значение `PaSSw0rd` для переменной `some_fact` паролем `netology`. Добавьте полученное значение в `group_vars/all/exmp.yml`.**
+```
+ ansible-vault encrypt_string --vault-id @prompt PaSSw0rd
+```
 * **3. Запустите `playbook`, убедитесь, что для нужных хостов применился новый `fact`.**
 * **4. Добавьте новую группу хостов `fedora`, самостоятельно придумайте для неё переменную. В качестве образа можно использовать [этот вариант](https://hub.docker.com/r/pycontribs/fedora).**
 * **5. Напишите скрипт на bash: автоматизируйте поднятие необходимых контейнеров, запуск ansible-playbook и остановку контейнеров.**
