@@ -1,0 +1,20 @@
+---
+  el:
+    hosts:
+      centos7:
+        ansible_host: angry_dijkstra
+        ansible_connection: docker
+  deb:
+    hosts:
+      ubuntu:
+        ansible_host: silly_noyce
+        ansible_connection: docker
+  fed:
+    hosts:
+      fedora:
+        ansible_host: peaceful_dubinsky
+        ansible_connection: docker
+  local:
+    hosts:
+      localhost:
+        ansible_connection: local
