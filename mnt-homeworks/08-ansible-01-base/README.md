@@ -115,6 +115,9 @@ ansible-vault encrypt em/examp.yml
 * **11. Запустите playbook на окружении `prod.yml`. При запуске `ansible` должен запросить у вас пароль. Убедитесь, что факты `some_fact` для каждого из хостов определены из верных `group_vars`.**
 
 ![alt text](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/mnt-homeworks/08-ansible-01-base/img/11.png)
+
+https://github.com/filipp761/Netology-DevOps/tree/main/mnt-homeworks/08-ansible-01-base
+
 ## Необязательная часть
 
 * **1. При помощи `ansible-vault` расшифруйте все зашифрованные файлы с переменными.**
@@ -138,4 +141,4 @@ ansible-vault decrypt group_vars/el/examp.yml
 
 ![alt text](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/mnt-homeworks/08-ansible-01-base/img/dop_05.png)
 
-* **5. Напишите скрипт на bash: автоматизируйте поднятие необходимых контейнеров, запуск ansible-playbook и остановку контейнеров.**
+
