@@ -133,3 +133,5 @@ sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.org|g' /
 ansible.builtin.yum
   disable_gpg_check: true
 ```
+
+https://github.com/filipp761/Netology-DevOps/tree/main/mnt-homeworks/08-ansible-02-playbook%20
