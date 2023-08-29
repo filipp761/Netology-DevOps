@@ -100,15 +100,15 @@ Playbook производит установку и настройку след�
 
 * **5. Запустите ansible-lint site.yml и исправьте ошибки, если они есть.**
 
-![alt text](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/mnt-homeworks/08-ansible-01-base/img/01.png)
+![alt text](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/mnt-homeworks/08-ansible-02-playbook%20/img/ansible-lint.png)
 
 * **6. Попробуйте запустить playbook на этом окружении с флагом --check.**
 
-![alt text](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/mnt-homeworks/08-ansible-02-playbook/img/check.png)
+![alt text](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/mnt-homeworks/08-ansible-02-playbook%20/img/check.png)
 
 * **7. Запустите playbook на prod.yml окружении с флагом --diff. Убедитесь, что изменения на системе произведены.**
 
-![alt text](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/mnt-homeworks/08-ansible-02-playbook/img/diff.png)
+![alt text](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/mnt-homeworks/08-ansible-02-playbook%20/img/diff.png)
 
 ### Возникшие ошибки
 1. При скачивании пакетов в Centos7
@@ -126,7 +126,7 @@ sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.org|g' /
 ```
 
 2. GPG key
-![alt text](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/mnt-homeworks/08-ansible-02-playbook/img/error.png)
+![alt text](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/mnt-homeworks/08-ansible-02-playbook%20/img/error.png)
 **Решение:**
 
 ```yaml
