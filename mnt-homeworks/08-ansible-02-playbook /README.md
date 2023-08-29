@@ -100,7 +100,7 @@ Playbook производит установку и настройку след�
 
 * **5. Запустите ansible-lint site.yml и исправьте ошибки, если они есть.**
 
-![alt text](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/mnt-homeworks/08-ansible-02-playbook/img/ansible-lint.png)
+![alt text](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/mnt-homeworks/08-ansible-01-base/img/01.png)
 
 * **6. Попробуйте запустить playbook на этом окружении с флагом --check.**
 
