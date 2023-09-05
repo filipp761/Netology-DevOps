@@ -1,6 +1,6 @@
 # Домашнее задание к занятию  3 «Использование Ansible»
 
-## Подготовка к выполнению
+### Подготовка к выполнению
 
 1. Подготовьте в Yandex Cloud три хоста: для `clickhouse`, для `vector` и для `lighthouse`.
 2. Репозиторий LightHouse находится [по ссылке](https://github.com/VKCOM/lighthouse).
@@ -22,12 +22,37 @@
 </details>
 
 
-## Инфраструктура:
+### Инфраструктура:
 
-* Инфраструктура разворачивается с помощью `Terraform`
+* Инфраструктура разворачивается с помощью `Terraform` (разворачиваются 3 ВМ). Проект terraform: [terrafrom](/assets/08-ansible-03-yandex/terraform/) 
 
-1. Сервер `clickhouse-01` для сбора логов.
-2. Сервер `vector-01`, генерирующий и обрабатывающий логи.
-3. Сервер `lighthouse-01`
+1. vector-01
+2. clickhouse-01
+3. lighthouse-01
 
-Приложение на сервере `vector-01` генерирует псевдо логи и отсылает их на сервер `clickhouse-01` для сохранения в базу данных.
+* Файл inventory генерируется автоматически, с помощью скрипта: 
+
+### Playbook
+Playbook производит настройку трех ВМ:  
+- `vector-01` - для сбора логов на сервере и передачу на сервер Сlickhouse
+- `clickhouse-01` - для разворачивания БД ClickHouse и хранения логов
+- `lighthouse-01` - для отображения логов из ClickHouse
+
+### Variables
+Значения переменных устанавливаются в файлах `vars.yml` в соответствующих директориях в `group_vars`  
+Требуется задать следующие параметры:
+- `clickhouse_version`, `vector_version` - версии устанавливаемых приложений;
+- `clickhouse_database_name` - имя базы данных в `clickhouse`;
+- `clickhouse_create_table_name` - имя таблицы в `clickhouse`;
+- `vector_config` - содержимое конфигурационного файла для приложения `vector`;
+- `lighthouse_home_dir` - домашняя директория `lighthouse` 
+- `nginx_config_dir` - директория расположения конфига `nginx`
+---
+
+### Tags
+
+`ping` - Проверяет доступность серверов  
+`clickhouse` - производит полную конфигурацию сервера `clickhouse-01`;  
+`vector` - производит полную конфигурацию сервера `vector-01`;  
+`vector_config` - производит изменение в конфиге приложения `vector`;  
+`lighthouse` - производит полную конфигурацию сервера `lighthouse-01`
