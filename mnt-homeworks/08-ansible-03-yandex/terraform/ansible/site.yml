@@ -1,7 +1,7 @@
----
-## Установка Clickhouse
+################################################################################
 - name: Install Clickhouse
   hosts: clickhouse
+  tags: [clickhouse]
   handlers:
     - name: Start clickhouse service
       become: true
@@ -23,94 +23,122 @@
     - name: Install clickhouse packages
       become: true
       ansible.builtin.yum:
-        disable_gpg_check: true
         name:
           - clickhouse-common-static-{{ clickhouse_version }}.rpm
           - clickhouse-client-{{ clickhouse_version }}.rpm
           - clickhouse-server-{{ clickhouse_version }}.rpm
       notify: Start clickhouse service
+
+# ??????????????????????????????????????????????????????????????????????
+    - name: Enable remote connections to clickhouse server
+      become: true
+      ansible.builtin.lineinfile:
+        path: /etc/clickhouse-server/config.xml
+        regexp: <!-- <listen_host>::</listen_host> -->
+        line: <listen_host>::</listen_host>
     - name: Flush handlers
       meta: flush_handlers
+# ??????????????????????????????????????????????????????????????????????
+
     - name: Create database
-      ansible.builtin.command: "clickhouse-client -q 'create database logs;'"
+      ansible.builtin.command: "clickhouse-client -q 'create database {{ clickhouse_database_name }};'"
       register: create_db
       failed_when: create_db.rc != 0 and create_db.rc !=82
       changed_when: create_db.rc == 0
 
-## Установка Vector    
+    - name: Create table
+      tags: clickhouse_db
+      ansible.builtin.command:
+        "clickhouse-client -q 'create table {{ clickhouse_database_name }}.{{ clickhouse_create_table_name }}
+        (appname String, facility String, hostname String, message String, msgid String, procid UInt16, severity String, timestamp DateTime64, version UInt8) Engine=Log;'"
+      register: create_table
+      failed_when: create_table.rc != 0 and create_table.rc !=57
+      changed_when: create_table.rc == 0
 
-- name: Install vector
+################################################################################
+- name: Install Vector manual
+  tags: [vector]
   hosts: vector
   handlers:
-    - name: Start vector service
+    - name: Start Vector service
       become: true
       ansible.builtin.service:
         name: vector
         state: restarted
   tasks:
-    - name: Get vector distrib
-      ansible.builtin.get_url:
-        url: "https://packages.timber.io/vector/0.21.1/vector-0.21.1-1.x86_64.rpm"
-        dest: "./vector-0.21.1.rpm"
-        mode: "0644"
-    - name: Install vector packages
-      become: true
-      ansible.builtin.yum:
-        disable_gpg_check: true
-        name:
-          - vector-0.21.1.rpm
-      notify: Start vector service
-    - name: Flush handlers
-      meta: flush_handlers
+    - block:
+        - name: Get vector distrib
+          ansible.builtin.get_url:
+            url: "https://packages.timber.io/vector/latest/vector-{{ vector_version }}.{{ ansible_architecture }}.rpm"
+            dest: "./vector-{{ vector_version }}.{{ ansible_architecture }}.rpm"
+        - name: Install vector package
+          become: true
+          ansible.builtin.yum:
+            name:
+              - "./vector-{{ vector_version }}.{{ ansible_architecture }}.rpm"
 
-## Установка Nginx
-
-- name: Install Nginx
+ ##???????????????????????????????????????????????????????????????????????????
+        - name: Redefine vector config name
+          become: true
+          tags: vector_config
+          ansible.builtin.lineinfile:
+            path: /etc/default/vector
+            regexp: "VECTOR_CONFIG="
+            line: VECTOR_CONFIG=/etc/vector/config.yaml
+        - name: Create vector config
+          become: true
+          tags: vector_config
+          ansible.builtin.copy:
+            dest: /etc/vector/config.yaml
+            content: |
+              {{ vector_config | to_nice_yaml(indent=2) }}
+        - name: Flush handlers
+          meta: flush_handlers
+      notify: Start Vector service
+################################################################################
+- name: Install lighthouse
   hosts: lighthouse
+  tags: lighthouse
   handlers:
-    - name: Start Service Nginx
+    - name: restarted nginx service
       become: true
       ansible.builtin.service:
         name: nginx
-        state: started
-        enabled: yes
-
+        state: restarted
+      when: not ansible_check_mode
   tasks:
-    - name: Install Epel
+    - block:
+      - name: add repo nginx
+        ansible.builtin.copy:
+          dest: /etc/yum.repos.d/nginx.repo
+          mode: '0755'
+          content: |
+            [nginx]
+            name=nginx repo
+            baseurl=https://nginx.org/packages/centos/$releasever/$basearch/
+            gpgcheck=0
+            enabled=1
+
+      - name: install nginx and git
+        ansible.builtin.yum:
+          name:
+            - nginx
+            - git
+          state: latest
+          update_cache: yes
+        when: not ansible_check_mode
+
+      - name: Get lighthouse from git
+        ansible.builtin.git:
+          repo: 'https://github.com/VKCOM/lighthouse.git'
+          dest: "{{ lighthouse_home_dir }}"
+        when: not ansible_check_mode
+
+      - name: Configure nginx from template
+        ansible.builtin.template:
+          src: lighthouse.conf.j2
+          dest: "{{ nginx_config_dir }}/conf.d/default.conf"
       become: true
-      ansible.builtin.yum:
-        name: epel-release
-        state: present
-
-    - name: Install Nginx
-      become: true
-      ansible.builtin.yum:
-        name: nginx
-        state: latest
-
-    - name: Open port FireWall
-      ansible.builtin.shell:
-        cmd: firewall-cmd --permanent --add-port=80/tcp; firewall-cmd --permanent --add-port=80/tcp
-
+      notify: restarted nginx service
     - name: Flush handlers
       meta: flush_handlers
-
-## Установка Lighthouse
-- name: Install lighthouse
-  hosts: lighthouse
-  handlers:
-    - name: reload-nginx
-      become: true
-      command: nginx -s reload
-  pre_tasks:
-    - name: Lighthouse | install git
-      become: true
-      ansible.builtin.yum:
-        name: git
-        state: present
-  tasks:
-    - name: Lighthouse | Copy from git
-      git:
-        repo: "https://github.com/Consensys/ansible-role-lighthouse.git"
-        version: master
-        dest: "./Lighthouse"
