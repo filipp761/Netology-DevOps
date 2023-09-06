@@ -1,14 +1,14 @@
-vector_version: "0.21.1"
+vector_version: "0.32.1-1"
 vector_config:
   sources:
-    dummy_logs:
+    log:
       type: demo_logs
       format: syslog
       interval: 1
   transforms:
     parse_logs:
       inputs:
-      - dummy_logs
+        - log
       source: |-
         . = parse_syslog!(string!(.message))
         .timestamp = to_string(.timestamp)
@@ -19,10 +19,10 @@ vector_config:
       type: clickhouse
       inputs:
         - parse_logs
-      database: logs2
-      endpoint: 'http://clickhouse-01:8123'
+      database: logs
+      endpoint: "http://158.160.60.237:8123"
       table: log
       compression: gzip
   api:
     enabled: true
-    address: '0.0.0.0:8686'
+    address: "0.0.0.0:8686"
