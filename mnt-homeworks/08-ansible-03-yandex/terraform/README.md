@@ -25,12 +25,11 @@
 ### Инфраструктура:
 
 * Инфраструктура разворачивается с помощью `Terraform` (разворачиваются 3 ВМ). Проект terraform: [terrafrom](/assets/08-ansible-03-yandex/terraform/) 
-
+* Файл inventory генерируется автоматически, с помощью файла [hosts.tftpl](hosts.tftpl)
+* После выполнения команды `terraform apply` будет создано 3 ВМ и выведены их hostname и IP-адрес
 1. vector-01
 2. clickhouse-01
 3. lighthouse-01
-
-* Файл inventory генерируется автоматически, с помощью скрипта: 
 
 ### Playbook
 Playbook производит настройку трех ВМ:  
