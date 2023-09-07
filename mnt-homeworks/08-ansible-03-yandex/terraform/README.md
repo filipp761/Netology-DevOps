@@ -55,6 +55,7 @@ Playbook производит настройку трех ВМ:
 `vector_config` - производит изменение в конфиге приложения `vector`;  
 `lighthouse` - производит полную конфигурацию сервера `lighthouse-01`
 
+https://github.com/filipp761/Netology-DevOps/tree/main/mnt-homeworks/08-ansible-03-yandex/terraform
 _____
 5. Запустите `ansible-lint site.yml` и исправьте ошибки, если они есть.
 
