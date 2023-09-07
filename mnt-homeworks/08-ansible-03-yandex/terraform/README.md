@@ -24,12 +24,12 @@
 
 ### Инфраструктура:
 
-* Инфраструктура разворачивается с помощью `Terraform` (разворачиваются 3 ВМ). Проект terraform: [terrafrom](/assets/08-ansible-03-yandex/terraform/) 
+* Инфраструктура разворачивается с помощью `Terraform` (разворачиваются 3 ВМ). Проект terraform: [terraform](https://github.com/filipp761/Netology-DevOps/tree/main/mnt-homeworks/08-ansible-03-yandex/terraform) 
 * Файл inventory генерируется автоматически, с помощью файла [hosts.tftpl](hosts.tftpl)
 * После выполнения команды `terraform apply` будет создано 3 ВМ и выведены их hostname и IP-адрес
-1. vector-01
-2. clickhouse-01
-3. lighthouse-01
+1. vector
+2. clickhouse
+3. lighthouse
 
 ### Playbook
 Playbook производит настройку трех ВМ:  
@@ -49,9 +49,28 @@ Playbook производит настройку трех ВМ:
 ---
 
 ### Tags
-
-`ping` - Проверяет доступность серверов  
+ 
 `clickhouse` - производит полную конфигурацию сервера `clickhouse-01`;  
 `vector` - производит полную конфигурацию сервера `vector-01`;  
 `vector_config` - производит изменение в конфиге приложения `vector`;  
 `lighthouse` - производит полную конфигурацию сервера `lighthouse-01`
+
+_____
+5. Запустите `ansible-lint site.yml` и исправьте ошибки, если они есть.
+
+![alt text](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/mnt-homeworks/08-ansible-03-yandex/terraform/img/ansible-lint.png)
+
+7. Попробуйте запустить playbook на этом окружении с флагом `--check`.
+
+![alt text](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/mnt-homeworks/08-ansible-03-yandex/terraform/img/--check.png)
+
+8. Запустите playbook на `prod.yml` окружении с флагом `--diff`. Убедитесь, что изменения на системе произведены.
+9. Повторно запустите playbook с флагом `--diff` и убедитесь, что playbook идемпотентен.
+
+![alt text](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/mnt-homeworks/08-ansible-03-yandex/terraform/img/--diff.png)
+
+---
+
+### Отображение логов в LightHouse
+![alt text](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/mnt-homeworks/08-ansible-03-yandex/terraform/img/LightHouse.png)
+
