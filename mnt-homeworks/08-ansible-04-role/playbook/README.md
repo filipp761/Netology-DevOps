@@ -38,3 +38,26 @@
 1. vector
 2. clickhouse
 3. lighthouse
+
+### Playbook
+Playbook производит настройку трех ВМ:  
+- `vector-01` - для сбора логов на сервере и передачу на сервер Сlickhouse
+- `clickhouse-01` - для разворачивания БД ClickHouse и хранения логов
+- `lighthouse-01` - для отображения логов из ClickHouse
+
+### Variables
+Значения переменных устанавливаются в файлах `vars.yml` в соответствующих директориях в `group_vars`  
+Требуется задать следующие параметры:
+- `clickhouse_version`, `vector_version` - версии устанавливаемых приложений;
+- `clickhouse_database_name` - имя базы данных в `clickhouse`;
+- `clickhouse_create_table_name` - имя таблицы в `clickhouse`;
+- `vector_config` - содержимое конфигурационного файла для приложения `vector`;
+- `lighthouse_home_dir` - домашняя директория `lighthouse` 
+- `nginx_config_dir` - директория расположения конфига `nginx`
+---
+
+### Tags
+`clickhouse` - производит полную конфигурацию сервера `clickhouse-01`;  
+`vector` - производит полную конфигурацию сервера `vector-01`;  
+`vector_config` - производит изменение в конфиге приложения `vector`;  
+`lighthouse` - производит полную конфигурацию сервера `lighthouse-01`
