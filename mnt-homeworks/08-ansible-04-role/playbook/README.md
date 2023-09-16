@@ -61,3 +61,12 @@ Playbook производит настройку трех ВМ:
 `vector` - производит полную конфигурацию сервера `vector-01`;  
 `vector_config` - производит изменение в конфиге приложения `vector`;  
 `lighthouse` - производит полную конфигурацию сервера `lighthouse-01`
+
+### Requirements
+------------
+- [clickhouse](https://github.com/filipp761/Clickhouse-role.git) - роль для установки приложения `clickhouse`  
+- [vector-role](https://github.com/filipp761/Vector-role.git) - роль для установки приложения `vector`  
+- [lighthouse-role](https://github.com/filipp761/Lighthouse-role.git) - роль для установки приложения `lighthouse`
+
+Установка зависимостей:  
+`ansible-galaxy install -r requirements.yml -p roles`
