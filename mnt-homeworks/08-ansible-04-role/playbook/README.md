@@ -45,6 +45,8 @@ Playbook производит настройку трех ВМ:
 - `clickhouse-01` - для разворачивания БД ClickHouse и хранения логов
 - `lighthouse-01` - для отображения логов из ClickHouse
 
+[site.yml](https://github.com/filipp761/Netology-DevOps/blob/main/mnt-homeworks/08-ansible-04-role/playbook/terrafrom/ansible/site.yml)
+
 ### Variables
 Значения переменных устанавливаются в файлах `vars.yml` в соответствующих директориях в `group_vars`  
 Требуется задать следующие параметры:
