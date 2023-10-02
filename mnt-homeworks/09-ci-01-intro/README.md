@@ -43,5 +43,8 @@
 1. Перейдите в Scrum, запланируйте новый спринт, состоящий из задач эпика и одного бага, стартуйте спринт, проведите задачи до состояния Closed. Закройте спринт.
 2. Если всё отработалось в рамках ожидания — выгрузите схемы workflow для импорта в XML. Файлы с workflow и скриншоты workflow приложите к решению задания.
 
+![alt text](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/mnt-homeworks/09-ci-01-intro/img/Scrum.png)
+![alt text](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/mnt-homeworks/09-ci-01-intro/img/Scrum_history_for_bug.png)
+![alt text](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/mnt-homeworks/09-ci-01-intro/img/Scrum_history_for_tasks.png)
 
 ---
