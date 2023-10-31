@@ -20,8 +20,8 @@
 </details>
 
 [Проект](https://gitlab.com/filipp761/gitlab-netology)  
-[gitlab-ci.yml](09-ci-06-gitlab/gitlab-ci.yml)  
-[Dockerfile](09-ci-06-gitlab/Dockerfile) 
+[gitlab-ci.yml](.gitlab-ci.yml)  
+[Dockerfile](Dockerfile) 
 
 Проект в yandex.cloud:
 ![alt text](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/mnt-homeworks/09-ci-06-gitlab/img/Instance_gitlab.png)
@@ -40,7 +40,7 @@
 3. Issue поставить label: feature.
 </details>
 
-[Ссылка на задачу]()  
+[Ссылка на задачу](https://gitlab.com/filipp761/gitlab-netology/-/issues/1)  
 
 ![alt text](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/mnt-homeworks/09-ci-06-gitlab/img/Issues.png)
 
@@ -55,7 +55,7 @@
 </details>
 
 [Merge request](https://gitlab.com/filipp761/gitlab-netology/-/merge_requests?scope=all&state=merged)  
-[app.py](09-ci-06-gitlab/app.py)  
+[app.py](app.py)  
 
 ![alt text](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/mnt-homeworks/09-ci-06-gitlab/img/Issues_closed.png)
 ![alt text](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/mnt-homeworks/09-ci-06-gitlab/img/Issues_closed_2.png)
