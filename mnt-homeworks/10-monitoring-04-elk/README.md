@@ -28,11 +28,16 @@
 Logstash следует сконфигурировать для приёма по tcp json-сообщений.
 Filebeat следует сконфигурировать для отправки логов docker вашей системы в logstash.
 
-<details>
-<summary>Вывод в консоль</summary>
+![alt text](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/mnt-homeworks/10-monitoring-04-elk/img/docker_compose.png)
+![alt text](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/mnt-homeworks/10-monitoring-04-elk/img/Kibana.png)
 
-```sh
+## Задание 2
 
-```
+Перейдите в меню [создания index-patterns  в kibana](http://localhost:5601/app/management/kibana/indexPatterns/create) и создайте несколько index-patterns из имеющихся.
 
-</details>
+Перейдите в меню просмотра логов в kibana (Discover) и самостоятельно изучите, как отображаются логи и как производить поиск по логам.
+![alt text](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/mnt-homeworks/10-monitoring-04-elk/img/Kibana_Data_Views.png)
+
+![alt text](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/mnt-homeworks/10-monitoring-04-elk/img/index_paterns_1.png)
+
+![alt text](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/mnt-homeworks/10-monitoring-04-elk/img/index_paterns_2.png)
