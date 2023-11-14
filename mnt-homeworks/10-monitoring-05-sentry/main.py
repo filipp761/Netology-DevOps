@@ -3,7 +3,7 @@
 import sentry_sdk
 
 sentry_sdk.init(
-    dsn="https://3a5eeb1598d25b05f63eff48bcb3ad63@o4506031283240960.ingest.sentry.io/4506031294840832",
+    dsn="https://82113cb6e1d1757c0aef9715252ff9b7@o4506217482813440.ingest.sentry.io/4506224049061888",
     traces_sample_rate=1.0,
     profiles_sample_rate=1.0,
     environment="development",
