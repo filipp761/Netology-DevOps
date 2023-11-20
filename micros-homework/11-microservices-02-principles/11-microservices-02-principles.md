@@ -16,6 +16,27 @@
 - обеспечение терминации HTTPS.
 </details>
 
+### Сравнительная таблица возможностей различных API Gateway
+
+| API geteway | Обеспечение терминации HTTPS | Возможность проверки аутентификационной информации в запросах | Маршрутизация запросов к нужному сервису на основе конфигурации | Итеграция с облаком |
+| ------------- |:-------------|:-----|:---|:---|
+| Amazon API Gateway |+|+|AWS Lambda|AWS|
+| Microsoft Azure API Management |+|+|AWS Lambda|AWS|
+| IBM API Connect |+|+|AWS Lambda|AWS|
+| Apigee Edge Microgateway |+|+|AWS Lambda|AWS|
+| MuleSoft Anypoint Platform |+|+|AWS Lambda|AWS|
+| Tyk |+|+|AWS Lambda|AWS|
+| Express Gateway |+|+|AWS Lambda|AWS|
+| KrakenD |+|+|AWS Lambda|AWS|
+| Netflix Zuul |+|+|AWS Lambda|AWS|
+| Oracle |+|+|AWS Lambda|AWS|
+| NGINX Plus |+|+|AWS Lambda|AWS|
+| Spring Cloud Gateway |+|+|AWS Lambda|AWS|
+| WSO2 API Manager |+|+|AWS Lambda|AWS|
+| Red Hat 3scale APIcast API Gateway |+|+|AWS Lambda|AWS|
+| Gravitee |+|+|AWS Lambda|AWS|
+| Kong Enterprise Edition |+|+|AWS Lambda|AWS|
+
 ## Задача 2: Брокер сообщений
 
 <details>
@@ -31,6 +52,16 @@
 - разделение прав доступа к различным потокам сообщений,
 - простота эксплуатации.
 </details>
+
+| Брокер сообщений | Поддержка кластеризации | Хранение сообщений на диске | Высокая скорость работы | Поддержка различных форматов сообщений | Разделение прав доступа | Простота эксплуатации |
+| --- | --- | --- | --- | --- | --- | --- |
+| Apache Kafka | + | + | + | + | + | +- |
+| RabbitMQ | + | + | + | STOMP, AMQP, MQTT | + | + |
+| Redis | + | +- | + | + | + | + |
+| ActiveMQ | + | + | + | OpenWire, STOMP, AMQP, MQTT, JMS | + | + |
+
+**Выводы**:  
+`Apache Kafka` - является наиболее популярным продуктом с большим сообществом и высокой призводительностью. `Redis` - имеет наибольшую популярность как база данных для хранения `горячих` данных (InMemory database). `RabbitMQ` - простой в использовании, но имеет меньшую гибкость в использовании чем `Apache Kafka`
 
 ## Задача 3: API Gateway * (необязательная)
 
