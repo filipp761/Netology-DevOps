@@ -18,24 +18,24 @@
 
 ### Сравнительная таблица возможностей различных API Gateway
 
-| API geteway | Обеспечение терминации HTTPS | Возможность проверки аутентификационной информации в запросах | Маршрутизация запросов к нужному сервису на основе конфигурации | Итеграция с облаком |
+| API geteway | Обеспечение терминации HTTPS | Возможность проверки аутентификационной информации в запросах | Маршрутизация запросов к нужному сервису на основе конфигурации | Интеграция с облаком |
 | ------------- |:-------------|:-----|:---|:---|
 | Amazon API Gateway |+|+|AWS Lambda|AWS|
-| Microsoft Azure API Management |+|+|AWS Lambda|AWS|
-| IBM API Connect |+|+|AWS Lambda|AWS|
-| Apigee Edge Microgateway |+|+|AWS Lambda|AWS|
-| MuleSoft Anypoint Platform |+|+|AWS Lambda|AWS|
-| Tyk |+|+|AWS Lambda|AWS|
-| Express Gateway |+|+|AWS Lambda|AWS|
-| KrakenD |+|+|AWS Lambda|AWS|
-| Netflix Zuul |+|+|AWS Lambda|AWS|
-| Oracle |+|+|AWS Lambda|AWS|
-| NGINX Plus |+|+|AWS Lambda|AWS|
-| Spring Cloud Gateway |+|+|AWS Lambda|AWS|
-| WSO2 API Manager |+|+|AWS Lambda|AWS|
-| Red Hat 3scale APIcast API Gateway |+|+|AWS Lambda|AWS|
-| Gravitee |+|+|AWS Lambda|AWS|
-| Kong Enterprise Edition |+|+|AWS Lambda|AWS|
+| Microsoft Azure API Management |+|+||+|
+| Apigee Edge Microgateway |+|+||Any|
+| MuleSoft Anypoint Platform |+|+|Listener |+|
+| Tyk |+|+|+|+|
+| Express Gateway |+|+|+||
+| NGINX Plus |+|+|LUA|Any|
+| Spring Cloud gateway |+|+|yml, code|Any|
+| WSO2 API Manager |+|+|Web GUI/ CLI|Any|
+| Red Hat 3scale APIcast API Gateway |+|+|Web GUI|Any|
+| Kong Enterprise Edition |+|+|Plugins|Any|
+| NETFLIX Zuul |+|+|-|Any|
+
+Из информации полученной из открытых источников я могу сделать вывод, что в случае развертываения инфраструктуры в облаке наилучшим инструментом являются шлюзы, предоставляеме постащиком услуг (Amazon API gateway, sbercloud API gateway, Yandex.cloud API gateway и пр.) по причине наилучшей интерграции с другими сервисами, однако данные сервисы конфгурируются через веб интерфейс.
+
+Продукт nginx имеет огромную популярность и наверное наибольшее сообщество в России, можно остановиться на нем. При этом есть возможность платной поддержки при необходимости.
 
 ## Задача 2: Брокер сообщений
 
@@ -63,6 +63,7 @@
 **Выводы**:  
 `Apache Kafka` - является наиболее популярным продуктом с большим сообществом и высокой призводительностью. `Redis` - имеет наибольшую популярность как база данных для хранения `горячих` данных (InMemory database). `RabbitMQ` - простой в использовании, но имеет меньшую гибкость в использовании чем `Apache Kafka`
 
+<!---
 ## Задача 3: API Gateway * (необязательная)
 
 <details>
@@ -125,3 +126,4 @@ curl -X GET http://localhost/images/4e6df220-295e-4231-82bc-45e4b1484430.jpg
 #### [Дополнительные материалы: как запускать, как тестировать, как проверить](https://github.com/netology-code/devkub-homeworks/tree/main/11-microservices-02-principles)
 
 </details>
+--->
