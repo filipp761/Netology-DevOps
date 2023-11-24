@@ -76,7 +76,9 @@
 
 **2. Установить dashboard.**
 
-```microk8s enable dashboard```
+```
+microk8s enable dashboard
+```
 
 ------
 
@@ -85,6 +87,20 @@
 2. Настроить локально подключение к кластеру.
 3. Подключиться к дашборду с помощью port-forward.
 
+### Ответ:
+**1. Установить на локальную машину kubectl**
+```
+curl -LO https://storage.googleapis.com/kubernetes-release/release/`curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt`/bin/linux/amd64/kubectl
+```
+```
+chmod +x ./kubectl
+```
+```
+sudo mv ./kubectl /usr/local/bin/kubectl
+```
+```
+echo "source <(kubectl completion bash)" >> ~/.bashrc
+```
 ------
 
 ## Правила приёма работы
