@@ -102,7 +102,9 @@ sudo mv ./kubectl /usr/local/bin/kubectl
 echo "source <(kubectl completion bash)" >> ~/.bashrc
 ```
 ------
-
+```
+microk8s kubectl get all --all-namespaces
+```
 ## Правила приёма работы
 
 1. Домашняя работа оформляется в своём Git-репозитории в файле README.md. Выполненное домашнее задание пришлите ссылкой на .md-файл в вашем репозитории.
