@@ -71,7 +71,12 @@
 
 
 ### Ответ:
+**1. Установить MicroK8S на локальную машину или на удалённую виртуальную машину.**
 * Файл `kubeconfig` лежал по пути `/var/snap/microk8s/current/credentials/client.config`, а не `~/.kube`
+
+**2. Установить dashboard.**
+
+```microk8s enable dashboard```
 
 ------
 
