@@ -127,6 +127,7 @@ microk8s kubectl -n kube-system describe secret $token
 ![alt text](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/kuber-homeworks/1.1/img/dashboards.png)
 
 **3. Подключиться к дашборду с помощью port-forward.**
+
 **Проброс порта для подключения локально** 
 ```
 microk8s kubectl port-forward -n kube-system service/kubernetes-dashboard 30560:443
