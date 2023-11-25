@@ -74,11 +74,21 @@
 **1. Установить MicroK8S на локальную машину или на удалённую виртуальную машину.**
 * Файл `kubeconfig` лежал по пути `/var/snap/microk8s/current/credentials/client.config`, а не `~/.kube`
 
+![alt text](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/kuber-homeworks/1.1/img/microk8s_status.png)
+
 **2. Установить dashboard.**
 
 ```
 microk8s enable dashboard
 ```
+![alt text](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/kuber-homeworks/1.1/img/microk8s_dashboard.png)
+![alt text](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/kuber-homeworks/1.1/img/microk8s_status_with_dashboard.png)
+
+**3. Сгенерировать сертификат для подключения к внешнему ip-адресу.**
+```
+sudo microk8s refresh-certs --cert front-proxy-client.crt
+```
+![alt text](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/kuber-homeworks/1.1/img/microk8s_create_certificates.png)
 
 ------
 
@@ -101,10 +111,32 @@ sudo mv ./kubectl /usr/local/bin/kubectl
 ```
 echo "source <(kubectl completion bash)" >> ~/.bashrc
 ```
-------
+**2. Настроить локально подключение к кластеру.**
+**Узнает IP-адресс dashboard и пробуем подключится через браузер**
 ```
 microk8s kubectl get all --all-namespaces
 ```
+![alt text](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/kuber-homeworks/1.1/img/microk8s_namespaces.png)
+![alt text](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/kuber-homeworks/1.1/img/token_dashboards.png)
+**При подключении к кластеру у нас просит `Token`, его можно узнать командой**
+```
+token=$(microk8s kubectl -n kube-system get secret | grep default-token | cut -d " " -f1)
+microk8s kubectl -n kube-system describe secret $token
+```
+**Далее у нас запускается окно кластера**
+![alt text](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/kuber-homeworks/1.1/img/dashboards.png)
+
+**3. Подключиться к дашборду с помощью port-forward.**
+**Проброс порта для подключения локально** 
+```
+microk8s kubectl port-forward -n kube-system service/kubernetes-dashboard 30560:443
+```
+**Подключение напрямую и через проброс порта**
+![alt text](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/kuber-homeworks/1.1/img/port_forward2.png)
+
+**скриншоты вывода команд `kubectl get nodes`**
+![alt text](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/kuber-homeworks/1.1/img/get_nodes.png)
+
 ## Правила приёма работы
 
 1. Домашняя работа оформляется в своём Git-репозитории в файле README.md. Выполненное домашнее задание пришлите ссылкой на .md-файл в вашем репозитории.
