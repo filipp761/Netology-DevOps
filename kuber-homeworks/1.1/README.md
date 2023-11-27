@@ -73,6 +73,12 @@
 ### Ответ:
 **1. Установить MicroK8S на локальную машину или на удалённую виртуальную машину.**
 * Файл `kubeconfig` лежал по пути `/var/snap/microk8s/current/credentials/client.config`, а не `~/.kube`
+```
+sudo chown -f -R $USER ~/.kube
+```
+```
+sudo microk8s config > ~/.kube/config
+```
 
 ![alt text](https://github.com/filipp761/Netology-sdb-homewoks/blob/main/kuber-homeworks/1.1/img/microk8s_status.png)
 
