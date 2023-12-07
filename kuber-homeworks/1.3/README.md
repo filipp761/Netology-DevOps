@@ -29,7 +29,7 @@
 
 ![](img/kubectl_deployment_pod.png)
 
-**возникшая ошибка**
+* **Возникшая ошибка**
 
 ![](img/error.png)
 
