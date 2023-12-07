@@ -65,6 +65,9 @@
 4. Продемонстрировать состояние пода до и после запуска сервиса.
 
    * до
-     ![](img/before_starting_the_service.png)
+  
+![](img/before_starting_the_service.png)
+
    * после
-     ![](img/after starting the service.png) 
+  
+![](img/after_starting_the_service.png) 
