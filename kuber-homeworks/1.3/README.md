@@ -25,7 +25,7 @@
 ## Задание 1. Создать Deployment и обеспечить доступ к репликам приложения из другого Pod
 
 1. Создать Deployment приложения, состоящего из двух контейнеров — nginx и multitool. Решить возникшую ошибку.
-   * Создал [Deployment](./src/deploy_app.yaml)
+   * Создал [Deployment](./src/deployment.yaml)
 
 ![](img/kubectl_deployment_pod.png)
 
@@ -39,11 +39,13 @@
 ![](img/kubectl_deployment_pod_2.png)
 
 4. Создать Service, который обеспечит доступ до реплик приложений из п.1.
-   * Создал [Service](./src/service_app.yaml)
+   * Создал [Service](./src/service.yaml)
 
 ![](img/service.png)
 
 5. Создать отдельный Pod с приложением multitool и убедиться с помощью `curl`, что из пода есть доступ до приложений из п.1.
+
+   * Создал [Multitool](./src/multitool.yaml)
 
 ![](img/curl.png)
 
@@ -52,13 +54,13 @@
 ## Задание 2. Создать Deployment и обеспечить старт основного контейнера при выполнении условий
 
 1. Создать Deployment приложения nginx и обеспечить старт контейнера только после того, как будет запущен сервис этого приложения.
-   * Создал [Deployment](./src/nginx.yaml)
+   * Создал [Deployment](./src/init.yaml)
 2. Убедиться, что nginx не стартует. В качестве Init-контейнера взять busybox.
 
 ![](img/init_deployment.png)
 
 3. Создать и запустить Service. Убедиться, что Init запустился.
-   * Создал [Service](./src/nginx_svc.yaml)
+   * Создал [Service](./src/service.yaml)
 
 ![](img/start_service.png)
   
