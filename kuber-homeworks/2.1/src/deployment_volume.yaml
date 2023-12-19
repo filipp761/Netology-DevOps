@@ -1,0 +1,38 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: volume-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: volume
+  template:
+    metadata:
+      labels:
+        app: volume
+    spec:
+      containers:
+# Контейнер busybox
+      - name: busybox
+        image: busybox
+        command: ['sh', '-c', 'while true; do echo Success! >> /tmp/cache/success.txt; sleep 5; done']
+        volumeMounts:
+        - name: cache-volume
+          mountPath: /tmp/cache 
+# Контейнер multitool
+      - name: multitool
+        image: wbitt/network-multitool
+        env:
+        - name: HTTP_PORT
+          value: "11443"        
+        ports:
+        - containerPort: 11443
+        volumeMounts:
+        - name: cache-volume
+          mountPath: /static
+# Volume - общая папка между контейнерами
+      volumes:
+      - name: cache-volume
+        emptyDir: {}
