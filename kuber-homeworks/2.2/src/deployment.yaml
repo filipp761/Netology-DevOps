@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app-deployment
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: app-deployment
+  template:
+    metadata:
+      labels:
+        app: app-deployment
+    spec:
+      containers:
+      - name: busybox
+        image: busybox
+        command: ['sh', '-c', 'while true; do echo logtext >> /busy/log; sleep 5; done;']
+        volumeMounts:
+          - name: busy-volume
+            mountPath: "/busy"
+      - name: multitool
+        image: wbitt/network-multitool
+        env:
+        - name: HTTP_PORT
+          value: "8080"
+        ports:
+        - containerPort: 8080
+        volumeMounts:
+          - name: busy-volume
+            mountPath: "/busy"
+      volumes:
+        - name: busy-volume
+          persistentVolumeClaim:
+            claimName: pvc-deploy
