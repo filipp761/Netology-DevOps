@@ -32,16 +32,24 @@
 1. Создать Deployment приложения, состоящего из контейнеров busybox и multitool.
    * Создал [Deployment](./src/deployment.yaml)
 2. Создать PV и PVC для подключения папки на локальной ноде, которая будет использована в поде.
-   * Создал [PV](./src/persistentVolume.yml) и [PVC](./src/PersistentVolumeClaim.yml)
+   * Создал [PV](./src/persistentVolume.yaml) и [PVC](./src/PersistentVolumeClaim.yaml)
 
 ![](img/tail_multitool.png)
-3. Продемонстрировать, что multitool может читать файл, в который busybox пишет каждые пять секунд в общей директории.
-   ![](img/local_volume.png)
-4. Удалить Deployment и PVC. Продемонстрировать, что после этого произошло с PV. Пояснить, почему.
-   ![](img/delete_deployment_pvc.png)
-5. Продемонстрировать, что файл сохранился на локальном диске ноды. Удалить PV.  Продемонстрировать что произошло с файлом после удаления PV. Пояснить, почему.
-   ![](img/local_volume.png)
-   ![](img/delete_pv.png)
+
+3. Продемонстрировать, что multitool может читать файл, в который busybox пишет каждые пять секунд в общей директории
+
+![](img/local_volume.png)
+   
+5. Удалить Deployment и PVC. Продемонстрировать, что после этого произошло с PV. Пояснить, почему.
+   
+![](img/delete_deployment_pvc.png)
+   
+6. Продемонстрировать, что файл сохранился на локальном диске ноды. Удалить PV.  Продемонстрировать что произошло с файлом после удаления PV. Пояснить, почему.
+
+![](img/local_volume.png)
+![](img/delete_pv.png)
+   
+  * После удаления PV файлы сохранились на ноде, это связано с параметром спецификации PV: persistentVolumeReclaimPolicy: Delete - это означает что провайдер автоматически удаляет ресурсы сам (работает только в облачных Storage
 
 ------
 
