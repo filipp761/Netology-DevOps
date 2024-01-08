@@ -1,0 +1,11 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: cm-nginx
+data:
+  index.html: |
+    <html>
+    <h1> It is ConfigMap for nginx </h1>
+    </html
+  multitool_port: "11443"

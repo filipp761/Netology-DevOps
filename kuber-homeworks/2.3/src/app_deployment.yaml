@@ -1,0 +1,37 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nginx-deployment
+  template:
+    metadata:
+      labels:
+        app: nginx-deployment
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:1.14.2
+        ports:
+        - containerPort: 80
+        volumeMounts:
+          - name: nginx-html
+            mountPath: /usr/share/nginx/html/
+      - name: multitool
+        image: wbitt/network-multitool
+        env:
+        - name: HTTP_PORT
+          valueFrom:
+            configMapKeyRef:
+              name: cm-nginx
+              key: multitool_port
+        ports:
+        - containerPort: 11443
+      volumes:
+      - name: nginx-html
+        configMap:
+          name: cm-nginx
