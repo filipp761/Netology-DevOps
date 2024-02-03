@@ -1,0 +1,24 @@
+---
+master:
+  hosts:
+    master-node:
+      ansible_host: 158.160.113.227
+      ansible_user: ubuntu
+workers:
+  hosts:
+    worker-node-1:
+      ansible_host: 158.160.112.76
+      ansible_user: ubuntu
+    worker-node-2:
+      ansible_host: 158.160.109.20
+      ansible_user: ubuntu
+    worker-node-3:
+      ansible_host: 158.160.102.188
+      ansible_user: ubuntu
+    worker-node-4:
+      ansible_host: 158.160.118.251
+      ansible_user: ubuntu
+all:
+  children:
+    master:
+    workers:
