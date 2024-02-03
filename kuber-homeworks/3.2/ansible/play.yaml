@@ -1,5 +1,5 @@
 ---
-- name: Configuration Kubernetes nodes on Almalinux 9
+- name: Configuration Kubernetes nodes
   hosts: all
   become: true
   vars:
