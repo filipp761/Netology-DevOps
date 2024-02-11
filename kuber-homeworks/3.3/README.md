@@ -19,7 +19,7 @@
 ### Задание 1. Создать сетевую политику или несколько политик для обеспечения доступа
 
 1. Создать deployment'ы приложений frontend, backend и cache и соответсвующие сервисы.
-   * deployment'ы: [frontend](./src/frontend.yaml),[backend](./src/backend.yaml),[cache](./src/cache.yaml)
+   * deployment'ы: [frontend](./src/frontend_deployment.yaml),[backend](./src/backend_deployment.yaml),[cache](./src/cache_deployment.yaml)
    * сервисы: [frontend](./src/frontend-svc.yaml),[backend](./src/backend-svc.yaml),[cache](./src/cache-svc.yaml)
 2. В качестве образа использовать network-multitool.
 3. Разместить поды в namespace App.
@@ -27,5 +27,7 @@
    * Создать [политики](./src/police-app.yaml)
 5. Продемонстрировать, что трафик разрешён и запрещён.
    
-   ![](img/1.png)
-   ![](img/2.png)
+![](img/get_all.png)
+![](img/front_back.png)
+![](img/back_cache.png)
+![](img/cache.png)
