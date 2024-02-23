@@ -1,4 +1,6 @@
-# Домашнее задание к занятию «Организация сети»
+# Домашнее задание к занятию «Организация сети» dev-17_kuber-homeworks-clopro-15.1-yakovlev_vs
+«Организация сети»
+
 
 ### Подготовка к выполнению задания
 
@@ -29,6 +31,34 @@ Resource Terraform для Yandex Cloud:
 - [Route table](https://registry.terraform.io/providers/yandex-cloud/yandex/latest/docs/resources/vpc_route_table).
 - [Compute Instance](https://registry.terraform.io/providers/yandex-cloud/yandex/latest/docs/resources/compute_instance).
 
+#### Решение
+
+- [Terraform](./terraform) 
+
+Виртуальные машины
+![](pic/vm_yc.jpg)
+
+
+Подсети
+![](pic/subnet.jpg)
+
+
+Таблицы маршрутизации
+![](pic/route_table.jpg)
+
+
+Проверка интернета с public
+
+![](pic/public.jpg)
+
+
+Проверка интернета с private
+
+![](pic/private.jpg)
+
+
+
+
 ---
 ### Задание 2. AWS* (задание со звёздочкой)
 
@@ -58,9 +88,3 @@ Resource Terraform:
 1. [VPC](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/vpc).
 1. [Subnet](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/subnet).
 1. [Internet Gateway](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/internet_gateway).
-
-### Правила приёма работы
-
-Домашняя работа оформляется в своём Git репозитории в файле README.md. Выполненное домашнее задание пришлите ссылкой на .md-файл в вашем репозитории.
-Файл README.md должен содержать скриншоты вывода необходимых команд, а также скриншоты результатов.
-Репозиторий должен содержать тексты манифестов или ссылки на них в файле README.md.
