@@ -36,27 +36,24 @@ Resource Terraform для Yandex Cloud:
 - [Terraform](./terraform) 
 
 Виртуальные машины
-![](pic/vm_yc.jpg)
+![](img/yc_vm.png)
 
 
 Подсети
-![](pic/subnet.jpg)
+![](img/yc_subnet.png)
 
 
 Таблицы маршрутизации
-![](pic/route_table.jpg)
+![](img/yc_route.png)
 
 
 Проверка интернета с public
 
-![](pic/public.jpg)
-
+![](img/yc_public_vm.png)
 
 Проверка интернета с private
 
-![](pic/private.jpg)
-
-
+![](img/yc_private_vm.png)
 
 
 ---
