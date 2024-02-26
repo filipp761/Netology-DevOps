@@ -78,7 +78,7 @@
 
 4. (дополнительно)* Создать Application Load Balancer с использованием Instance group и проверкой состояния.
 
-### Общая конфигурация [Terraform](https://github.com/Valdem88/dev-17_kuber-homeworks-clopro-15.2-yakovlev_vs/tree/main/terraform)
+### Общая конфигурация [Terraform](https://github.com/filipp761/Netology-DevOps/tree/main/clopro-homeworks/15.2/terraform)
 
 Полезные документы:
 
