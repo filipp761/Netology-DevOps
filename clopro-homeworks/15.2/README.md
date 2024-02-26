@@ -43,7 +43,7 @@
 
 #### Решение
 
-   - Конфигурация [Instance Group](terraform/InstanceGroup.tf.tf)
+   - Конфигурация [Instance Group](./terraform/InstanceGroup.tf.tf)
 
 
    - Скрин Instance Group  
@@ -66,7 +66,7 @@
 
 #### Решение
 
-- Конфигурация [load-balancer](terraform/loadbalancer.tf.tf)
+- Конфигурация [load-balancer](./terraform/loadbalancer.tf.tf)
 
 - Проверка работоспособности при удалении одной машины
 
