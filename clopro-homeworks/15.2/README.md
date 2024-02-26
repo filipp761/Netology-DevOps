@@ -1,4 +1,5 @@
-# Домашнее задание к занятию «Вычислительные мощности. Балансировщики нагрузки»  
+# Домашнее задание к занятию «Вычислительные мощности. Балансировщики нагрузки» dev-17_kuber-homeworks-clopro-15.2-yakovlev_vs
+«Вычислительные мощности. Балансировщики нагрузки»
 
 ### Подготовка к выполнению задания
 
@@ -17,6 +18,21 @@
  - Создать бакет в Object Storage с произвольным именем (например, _имя_студента_дата_).
  - Положить в бакет файл с картинкой.
  - Сделать файл доступным из интернета.
+
+#### Решение
+
+   - Конфигурация [Бакета](terraform/bucket.tf)  
+
+
+   - Скрин Бакета из YC  
+   ![](img/yc_backet.png)  
+
+
+   - Скрин картинки в Бакете  
+   ![](img/yc_backet_1.png)
+
+Полученная ссылка для скачивания -  https://storage.yandexcloud.net/bucket-kopylov2024/picture.jpg
+
  
 2. Создать группу ВМ в public подсети фиксированного размера с шаблоном LAMP и веб-страницей, содержащей ссылку на картинку из бакета:
 
@@ -24,15 +40,55 @@
  - Для создания стартовой веб-страницы рекомендуется использовать раздел `user_data` в [meta_data](https://cloud.yandex.ru/docs/compute/concepts/vm-metadata).
  - Разместить в стартовой веб-странице шаблонной ВМ ссылку на картинку из бакета.
  - Настроить проверку состояния ВМ.
- 
+
+#### Решение
+
+   - Конфигурация [Instance Group](terraform/InstanceGroup.tf.tf)
+
+
+   - Скрин Instance Group  
+   ![](img/yc_ig_1.png)
+
+   ![](img/yc_ig_2.png)
+
+   - Скрин Target Group
+   ![](img/yc_tg.png) 
+
+
+   - Скрин картинки на инстансах из Instance Group 
+   ![](img/yc_loadbal.png)
+
+
 3. Подключить группу к сетевому балансировщику:
 
  - Создать сетевой балансировщик.
  - Проверить работоспособность, удалив одну или несколько ВМ.
+
+#### Решение
+
+- Конфигурация [load-balancer](terraform/loadbalancer.tf.tf)
+
+- Проверка работоспособности при удалении одной машины
+
+![](img/yc_lb_del.png)
+
+
+![](img/yc_lb_start.png)
+
+
 4. (дополнительно)* Создать Application Load Balancer с использованием Instance group и проверкой состояния.
+
+### Общая конфигурация [Terraform](https://github.com/Valdem88/dev-17_kuber-homeworks-clopro-15.2-yakovlev_vs/tree/main/terraform)
 
 Полезные документы:
 
 - [Compute instance group](https://registry.terraform.io/providers/yandex-cloud/yandex/latest/docs/resources/compute_instance_group).
 - [Network Load Balancer](https://registry.terraform.io/providers/yandex-cloud/yandex/latest/docs/resources/lb_network_load_balancer).
 - [Группа ВМ с сетевым балансировщиком](https://cloud.yandex.ru/docs/compute/operations/instance-groups/create-with-balancer).
+
+
+### Правила приёма работы
+
+Домашняя работа оформляется в своём Git репозитории в файле README.md. Выполненное домашнее задание пришлите ссылкой на .md-файл в вашем репозитории.
+Файл README.md должен содержать скриншоты вывода необходимых команд, а также скриншоты результатов.
+Репозиторий должен содержать тексты манифестов или ссылки на них в файле README.md.
