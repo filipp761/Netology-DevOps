@@ -38,5 +38,4 @@ variable "lamp-instance-image-id" {
 
 variable "public_key" {
   type    = string
-  default = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCWfdyRrURnDkQTKNib5vpWZiPRHZGLOrYcrJvzAATIw8GsvKMv9WyWHslOtRNLayA+5DZOD9wjvf0QV7pPrOHQnzDKfMMxzFj8ZnCkaGUMKB5jK9SfHoAaLoZijpVV/nT0lHsuvcbuy4DFnlXpUe1MN9F4MHbc8g/84IoQk2NBeOU3geehMN1E1GKTJfenK+9Ulnb9zTh80KU6GyKYCvvdL9gjuBXMLJwBPpf/y4Oeh8OKRh4OySSZN2qoMzrRLDSOvHtHOZZa67yluWBO0cpz/IVp8IPEW5jqq3wwxYw6oUj4RpGXYtKuJCkkVqnUsLCATIwI18Gl3j/5NdEi7WxaqHJuQDj2OZfkDHeVT8QMUk5bB3fcBLB3BLomSJwnvbyWkuAtqGxU+HurCDk8MWCkG6YbeQhCAdYPmiyUO4nWVNfvtXjl4+rcDgW+V+/9FflVuTXn5PtLRkQuErDh246bmpqfQvilEODScgxWtqPEMo7WHTWPr+t4DE/kvFAi+r8= philipp@philipp-VirtualBox"
-}
+  default = ""
